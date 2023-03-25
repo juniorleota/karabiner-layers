@@ -1,0 +1,70 @@
+{:main [
+        {
+         :des   "number mode"
+         :rules [
+                 [[:d :s] [["number_mode" 1] ["symbol-mode" 0]] ["number-mode" 0]]
+                 [[:d :s] [["number_mode" 0] ["symbol-mode" 0]] ["number-mode" 1]]
+                 [:q :equal_sign ["number-mode" 1]]
+                 [:a :1 ["number-mode" 1]]
+                 [:s :2 ["number-mode" 1]]
+                 [:d :3 ["number-mode" 1]]
+                 [:f :4 ["number-mode" 1]]
+                 [:g :5 ["number-mode" 1]]
+                 [:h :6 ["number-mode" 1]]
+                 [:j :7 ["number-mode" 1]]
+                 [:k :8 ["number-mode" 1]]
+                 [:l :9 ["number-mode" 1]]
+                 [:p :hyphen ["number-mode" 1]]
+                 [:semicolon :0 ["number-mode" 1]]
+                 ]
+         }
+        {
+         :des   "symbol-mode"
+         :rules [
+                 [[:d :f] [["symbol-mode" 1] ["number_mode" 0]] ["symbol-mode" 0]]
+                 [[:d :f] [["symbol-mode" 0] ["number_mode" 0]] ["symbol-mode" 1]]
+                 [:q :!Sequal_sign ["symbol-mode" 1]]
+                 [:a :!S1 ["symbol-mode" 1]]
+                 [:s :!S2 ["symbol-mode" 1]]
+                 [:d :!S3 ["symbol-mode" 1]]
+                 [:f :!S4 ["symbol-mode" 1]]
+                 [:g :!S5 ["symbol-mode" 1]]
+                 [:h :!S6 ["symbol-mode" 1]]
+                 [:j :!S7 ["symbol-mode" 1]]
+                 [:k :!S8 ["symbol-mode" 1]]
+                 [:l :!S9 ["symbol-mode" 1]]
+                 [:p :!Shyphen ["symbol-mode" 1]]
+                 ;;  {:afterup ["symbol-mode" 0]}
+                 [:semicolon :!S0 ["symbol-mode" 1]]
+                 [:period :open_bracket ["symbol-mode" 1]]
+                 [:slash :close_bracket ["symbol-mode" 1]]
+                 ]
+         }
+        {
+         :des   "global rules"
+         :rules [
+                 [:page_up [["symbol-mode" 0] ["number-mode" 0]]]
+                 [[:j :k] [:escape ["symbol-mode" 0] ["number-mode" 0]]]
+                 [:escape [["symbol-mode" 0] ["number-mode" 0] [:escape]]]
+                 ]
+         }
+        ]
+ }
+;; rule [:period ["variable-state" 1] nil {:afterup ["variable-state" 0] :alone :period}]
+;;       |_____| |_______________|    |_| |_________________________________________|
+;;        <from>    <to>      <conditions>         <other options>
+
+;; so we have a <other options> here, and we know that <conditions> can be nil
+
+;; rule is actually the manipulator in karabienr.json, checkout here
+;; https://pqrs.org/osx/karabiner/json.html#complex_modifications-manipulator-definition
+
+;; We can see there are ~type~, ~from~, ~to~, ~to_if_alone~, ~to_if_held_down~,
+;; ~to_after_key_up~, ~to_delayed_action~, ~description~, ~conditions~,
+;; ~parameters~. We already have <from> <to> <conditions>, and we can omit
+;; ~type~ and ~description~.
+
+;; So <other options> includes ~to_if_alone~, ~to_if_held_down~,
+;; ~to_after_key_up~, ~to_delayed_action~ and ~parameters~.
+
+;; The first 4 is same as tos definition, and we also have shortcuts for ~parameters~.
