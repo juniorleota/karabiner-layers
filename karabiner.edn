@@ -3,12 +3,12 @@
                       :default true
                       ;; simultaneous key press threshold
                       ;; simlayer is implemented with to_if_alone and simultaneous key press feature
-                      :sim     250
+                      :sim     300
                       ;; to_delayed_action_delay_milliseconds
                       ;; checkout karabiner's documentation
                       ;; https://pqrs.org/osx/karabiner/json.html
                       ;; basically it means time after which the key press is count delayed
-                      :delay   500
+                      :delay  500
                       ;; https://pqrs.org/osx/karabiner/json.html#to-if-alone
                       ;; to_if_alone_timeout_milliseconds
                       ;; affects to_if_alone behavior
@@ -17,7 +17,7 @@
                       ;; to_if_held_down_threshold_milliseconds
                       ;; check the doc, I don't know what does this mean.
                       ;; maybe press this many milliseconds counts a "held" ?
-                      :held     250}}
+                      :held     300}}
  :simlayers {
              :space-mode {:key :spacebar}
              :enter-mode {:key :f20}
@@ -30,8 +30,8 @@
          :rules [
                  [[:j :k] :escape]
                  [[:d :f] :return_or_enter]
+                 ; seems to be issue with using home row mode
                  ;[:f [] nil {:alone :f :held :left_command}]
-
                  ]
          }
         {:des   "enter-mode for numbers"
@@ -54,23 +54,29 @@
         ;
         {:des   "space mode for symbols"
          :rules [:space-mode
-                 ; upper layer
+                 ; upper layer left
                  [:q :equal_sign]
                  [:w :!Sequal_sign]
-                 ; middle layer
+                 ; upper layer right
+                 [:o :hyphen]
+                 [:p :!Shyphen]
+                 [:backslash :!Sbackslash]
+                 ; middle layer left
                  [:a :!S1]
                  [:s :!S2]
                  [:d :!S3]
                  [:f :!S4]
                  [:g :!S5]
+                 ; middle layer right
                  [:h :!S6]
                  [:j :!S7]
                  [:k :!S8]
                  [:l :!S9]
-                 [:p :!Shyphen]
-                 [:o :hyphen]
                  [:semicolon :!S0]
-                 ; bottom layer
+                 ; bottom layer left
+                 [:z :grave_accent_and_tilde]
+                 [:x :!Sgrave_accent_and_tilde]
+                 ; bottom layer right
                  [:m :!Sopen_bracket]
                  [:comma :!Sclose_bracket]
                  [:period :open_bracket]
@@ -88,22 +94,5 @@
                  [:u :page_up]
                  ]
          }
-
-        {:des   "Forward slash is an easier right-shift (if combined)"
-         :rules [
-                 [:slash :left_shift nil {:alone :slash}]
-                 ]}
-
-        ;; Using keys for CTRL etc (home-row-mods) isn't practical with plain Karabiner.
-        ;; Some changes to timeout settings would be required, and the documentation is
-        ;; not clear enough.
-        #_{:des   "Convenient CTRL (T,Y) and COMMAND (G,H)"
-           :rules [
-                   [:##t :left_control nil {:alone :t}]
-                   [:##y :left_control nil {:alone :y}]
-                   [:##g :left_command nil {:alone :g}]
-                   [:##h :left_command nil {:alone :h}]
-                   ]}
-
         ]
  }
