@@ -1,69 +1,109 @@
-{:main [
-        {
-         :des   "number mode"
-         :rules [
-                 [[:d :s] [["number_mode" 1] ["symbol-mode" 0]] ["number-mode" 0]]
-                 [[:d :s] [["number_mode" 0] ["symbol-mode" 0]] ["number-mode" 1]]
-                 [:q :equal_sign ["number-mode" 1]]
-                 [:a :1 ["number-mode" 1]]
-                 [:s :2 ["number-mode" 1]]
-                 [:d :3 ["number-mode" 1]]
-                 [:f :4 ["number-mode" 1]]
-                 [:g :5 ["number-mode" 1]]
-                 [:h :6 ["number-mode" 1]]
-                 [:j :7 ["number-mode" 1]]
-                 [:k :8 ["number-mode" 1]]
-                 [:l :9 ["number-mode" 1]]
-                 [:p :hyphen ["number-mode" 1]]
-                 [:semicolon :0 ["number-mode" 1]]
-                 ]
-         }
-        {
-         :des   "symbol-mode"
-         :rules [
-                 [[:d :f] [["symbol-mode" 1] ["number_mode" 0]] ["symbol-mode" 0]]
-                 [[:d :f] [["symbol-mode" 0] ["number_mode" 0]] ["symbol-mode" 1]]
-                 [:q :!Sequal_sign ["symbol-mode" 1]]
-                 [:a :!S1 ["symbol-mode" 1]]
-                 [:s :!S2 ["symbol-mode" 1]]
-                 [:d :!S3 ["symbol-mode" 1]]
-                 [:f :!S4 ["symbol-mode" 1]]
-                 [:g :!S5 ["symbol-mode" 1]]
-                 [:h :!S6 ["symbol-mode" 1]]
-                 [:j :!S7 ["symbol-mode" 1]]
-                 [:k :!S8 ["symbol-mode" 1]]
-                 [:l :!S9 ["symbol-mode" 1]]
-                 [:p :!Shyphen ["symbol-mode" 1]]
-                 [:semicolon :!S0 ["symbol-mode" 1]]
-                 [:period :open_bracket ["symbol-mode" 1]]
-                 [:slash :close_bracket ["symbol-mode" 1]]
-                 ]
-         }
+{
+ :profiles {:Default {;; "default true means" rules default goes into this rule if no profiles specified
+                      :default true
+                      ;; simultaneous key press threshold
+                      ;; simlayer is implemented with to_if_alone and simultaneous key press feature
+                      :sim     250
+                      ;; to_delayed_action_delay_milliseconds
+                      ;; checkout karabiner's documentation
+                      ;; https://pqrs.org/osx/karabiner/json.html
+                      ;; basically it means time after which the key press is count delayed
+                      :delay   500
+                      ;; https://pqrs.org/osx/karabiner/json.html#to-if-alone
+                      ;; to_if_alone_timeout_milliseconds
+                      ;; affects to_if_alone behavior
+                      ;; simlayer is implemented with to_if_alone and simultaneous key press feature
+                      :alone   1000
+                      ;; to_if_held_down_threshold_milliseconds
+                      ;; check the doc, I don't know what does this mean.
+                      ;; maybe press this many milliseconds counts a "held" ?
+                      :held     250}}
+ :simlayers {
+             :space-mode {:key :spacebar}
+             :enter-mode {:key :f20}
+             :backspace-mode {:key :delete_or_backspace}
+             }
+
+ :main [
         {
          :des   "global rules"
          :rules [
-                 [:page_up [["symbol-mode" 0] ["number-mode" 0]]]
-                 [[:j :k] [:escape ["symbol-mode" 0] ["number-mode" 0]]]
-                 [:escape [["symbol-mode" 0] ["number-mode" 0] [:escape]]]
+                 [[:j :k] :escape]
+                 [[:d :f] :return_or_enter]
+                 ;[:f [] nil {:alone :f :held :left_command}]
+
                  ]
          }
+        {:des   "enter-mode for numbers"
+         :rules [:enter-mode
+                 [:q :equal_sign]
+                 [:a :1]
+                 [:s :2]
+                 [:d :3]
+                 [:f :4]
+                 [:g :5]
+                 [:h :6]
+                 [:j :7]
+                 [:k :8]
+                 [:l :9]
+                 [:semicolon :0]
+                 [:comma :open_bracket]
+                 [:period :close_bracket]
+                 ]
+         }
+        ;
+        {:des   "space mode for symbols"
+         :rules [:space-mode
+                 ; upper layer
+                 [:q :equal_sign]
+                 [:w :!Sequal_sign]
+                 ; middle layer
+                 [:a :!S1]
+                 [:s :!S2]
+                 [:d :!S3]
+                 [:f :!S4]
+                 [:g :!S5]
+                 [:h :!S6]
+                 [:j :!S7]
+                 [:k :!S8]
+                 [:l :!S9]
+                 [:p :!Shyphen]
+                 [:o :hyphen]
+                 [:semicolon :!S0]
+                 ; bottom layer
+                 [:m :!Sopen_bracket]
+                 [:comma :!Sclose_bracket]
+                 [:period :open_bracket]
+                 [:slash :close_bracket]
+                 ]
+         }
+        {:des   "backspace mode for navigation"
+         :rules [:backspace-mode
+                 ; upper layer
+                 [:h :left_arrow]
+                 [:j :down_arrow]
+                 [:k :up_arrow]
+                 [:l :right_arrow]
+                 [:d :page_down]
+                 [:u :page_up]
+                 ]
+         }
+
+        {:des   "Forward slash is an easier right-shift (if combined)"
+         :rules [
+                 [:slash :left_shift nil {:alone :slash}]
+                 ]}
+
+        ;; Using keys for CTRL etc (home-row-mods) isn't practical with plain Karabiner.
+        ;; Some changes to timeout settings would be required, and the documentation is
+        ;; not clear enough.
+        #_{:des   "Convenient CTRL (T,Y) and COMMAND (G,H)"
+           :rules [
+                   [:##t :left_control nil {:alone :t}]
+                   [:##y :left_control nil {:alone :y}]
+                   [:##g :left_command nil {:alone :g}]
+                   [:##h :left_command nil {:alone :h}]
+                   ]}
+
         ]
  }
-;; rule [:period ["variable-state" 1] nil {:afterup ["variable-state" 0] :alone :period}]
-;;       |_____| |_______________|    |_| |_________________________________________|
-;;        <from>    <to>      <conditions>         <other options>
-
-;; so we have a <other options> here, and we know that <conditions> can be nil
-
-;; rule is actually the manipulator in karabienr.json, checkout here
-;; https://pqrs.org/osx/karabiner/json.html#complex_modifications-manipulator-definition
-
-;; We can see there are ~type~, ~from~, ~to~, ~to_if_alone~, ~to_if_held_down~,
-;; ~to_after_key_up~, ~to_delayed_action~, ~description~, ~conditions~,
-;; ~parameters~. We already have <from> <to> <conditions>, and we can omit
-;; ~type~ and ~description~.
-
-;; So <other options> includes ~to_if_alone~, ~to_if_held_down~,
-;; ~to_after_key_up~, ~to_delayed_action~ and ~parameters~.
-
-;; The first 4 is same as tos definition, and we also have shortcuts for ~parameters~.
