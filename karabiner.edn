@@ -19,9 +19,9 @@
                       ;; maybe press this many milliseconds counts a "held" ?
                       :held     300}}
  :simlayers {
-             :space-mode {:key :spacebar}
-             :enter-mode {:key :f20}
-             :backspace-mode {:key :delete_or_backspace}
+             :symbol-mode {:key :delete_or_backspace}
+             :number-mode {:key :f20}
+             :navigation-mode {:key :spacebar}
              }
 
  :main [
@@ -35,7 +35,7 @@
                  ]
          }
         {:des   "enter-mode for numbers"
-         :rules [:enter-mode
+         :rules [:number-mode
                  [:q :equal_sign]
                  [:a :1]
                  [:s :2]
@@ -53,13 +53,13 @@
          }
         ;
         {:des   "space mode for symbols"
-         :rules [:space-mode
+         :rules [:symbol-mode
                  ; upper layer left
-                 [:q :equal_sign]
-                 [:w :!Sequal_sign]
+                 [:e :equal_sign]
+                 [:r :!Sequal_sign]
                  ; upper layer right
-                 [:o :hyphen]
-                 [:p :!Shyphen]
+                 [:u :hyphen]
+                 [:i :!Shyphen]
                  [:backslash :!Sbackslash]
                  ; middle layer left
                  [:a :!S1]
@@ -74,8 +74,8 @@
                  [:l :!S9]
                  [:semicolon :!S0]
                  ; bottom layer left
-                 [:z :grave_accent_and_tilde]
-                 [:x :!Sgrave_accent_and_tilde]
+                 [:c :grave_accent_and_tilde]
+                 [:v :!Sgrave_accent_and_tilde]
                  ; bottom layer right
                  [:m :!Sopen_bracket]
                  [:comma :!Sclose_bracket]
@@ -84,12 +84,13 @@
                  ]
          }
         {:des   "backspace mode for navigation"
-         :rules [:backspace-mode
-                 ; upper layer
+         :rules [:navigation-mode
+                 ; arrows layer
                  [:h :left_arrow]
                  [:j :down_arrow]
                  [:k :up_arrow]
                  [:l :right_arrow]
+                 ; page up or down layer
                  [:d :page_down]
                  [:u :page_up]
                  ]
