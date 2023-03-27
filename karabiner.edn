@@ -3,7 +3,7 @@
                        :default true
                        ;; simultaneous key press threshold
                        ;; simlayer is implemented with to_if_alone and simultaneous key press feature
-                       :sim     210
+                       :sim    100
                        ;; to_delayed_action_delay_milliseconds
                        ;; checkout karabiner's documentation
                        ;; https://pqrs.org/osx/karabiner/json.html
@@ -94,66 +94,66 @@
                       [:comma :open_bracket]
                       [:period :close_bracket]
                       ]}
-              {:des   "numbers sim layer"
-               :rules [:number-mode
-                       [:q :equal_sign]
-                       [:a :1]
-                       [:s :2]
-                       [:d :3]
-                       [:f :4]
-                       [:g :5]
-                       [:h :6]
-                       [:j :7]
-                       [:k :8]
-                       [:l :9]
-                       [:semicolon :0]
-                       [:comma :open_bracket]
-                       [:period :close_bracket]
-                       ]
-               }
-              ;
-              {:des   "symbols layers"
-               :rules [:symbol-mode
-                       ; upper layer left
-                       [:e :equal_sign]
-                       [:r :!Sequal_sign]
-                       ; upper layer right
-                       [:u :hyphen]
-                       [:i :!Shyphen]
-                       [:backslash :!Sbackslash]
-                       ; middle layer left
-                       [:a :!S1]
-                       [:s :!S2]
-                       [:d :!S3]
-                       [:f :!S4]
-                       [:g :!S5]
-                       ; middle layer right
-                       [:h :!S6]
-                       [:j :!S7]
-                       [:k :!S8]
-                       [:l :!S9]
-                       [:semicolon :!S0]
-                       ; bottom layer left
-                       [:c :grave_accent_and_tilde]
-                       [:v :!Sgrave_accent_and_tilde]
-                       ; bottom layer right
-                       [:m :!Sopen_bracket]
-                       [:comma :!Sclose_bracket]
-                       [:period :open_bracket]
-                       [:slash :close_bracket]
-                       ]
-               }
-              {:des   "navigation mode"
-               :rules [:navigation-mode
-                       ; arrows layer
-                       [:h :left_arrow]
-                       [:j :down_arrow]
-                       [:k :up_arrow]
-                       [:l :right_arrow]
-                       ; page up or down layer
-                       [:d :page_down]
-                       [:u :page_up]
-                       ]
-               }
+             {:des   "numbers sim layer"
+              :rules [:number-mode
+                      [:q :equal_sign]
+                      [:a :1]
+                      [:s :2]
+                      [:d :3]
+                      [:f :4]
+                      [:g :5]
+                      [:h :6]
+                      [:j :7]
+                      [:k :8]
+                      [:l :9]
+                      [:semicolon :0]
+                      [:comma :open_bracket]
+                      [:period :close_bracket]
+                      ]
+              }
+             ;
+             {:des   "symbols layers"
+              :rules [:symbol-mode
+                      ; upper layer left
+                      [:e :equal_sign]
+                      [:r :!Sequal_sign]
+                      ; upper layer right
+                      [:u :hyphen]
+                      [:i :!Shyphen]
+                      [:backslash :!Sbackslash]
+                      ; middle layer left
+                      [:a :!S1]
+                      [:s :!S2]
+                      [:d :!S3]
+                      [:f :!S4]
+                      [:g :!S5]
+                      ; middle layer right
+                      [:h :!S6]
+                      [:j :!S7]
+                      [:k :!S8]
+                      [:l :!S9]
+                      [:semicolon :!S0]
+                      ; bottom layer left
+                      [:c :grave_accent_and_tilde]
+                      [:v :!Sgrave_accent_and_tilde]
+                      ; bottom layer right
+                      [:m :!Sopen_bracket]
+                      [:comma :!Sclose_bracket]
+                      [:period :open_bracket]
+                      [:slash :close_bracket]
+                      ]
+              }
+             {:des   "navigation mode"
+              :rules [:navigation-mode
+                      ; arrows layer
+                      [:h :left_arrow]
+                      [:j :down_arrow]
+                      [:k :up_arrow]
+                      [:l :right_arrow]
+                      ; page up or down layer
+                      [:d :page_down]
+                      [:u :page_up]
+                      ]
+              }
              ]
  }
