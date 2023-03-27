@@ -38,11 +38,11 @@
               :rules [
                       ; if symbol layer on then go to number layer
                       [:page_up [["symbol-layer" 0] ["number-layer" 1]] [["symbol-layer" 1] ["number-layer" 0]]]
-                      ; if number layer then go to base layer
+                      ; if number layer activated then go to base layer
                       [:page_up [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 1]]]
-                      ; if base layer on then go to symbol layer
+                      ; if base layer activated then go to symbol layer
                       [:page_up [["symbol-layer" 1] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 0]]]
-                      ; shouldn't happen but if both symbol layer and number layer are on then go to base layer
+                      ; shouldn't happen but if both symbol layer and number layer are activated then go to base layer
                       [:page_up [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 1] ["number-layer" 1]]]
                       ; reset to base layer mechanisms
                       [:escape [:escape ["symbol-layer" 0] ["number-layer" 0]]]
@@ -110,7 +110,6 @@
                       [:y :home]
                       ; f simulates $
                       [:f :end]
-
                       ]
               }
              ]
