@@ -499,6 +499,24 @@
             "key_code" : "escape"
           } ],
           "type" : "basic"
+        }, {
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "d"
+            }, {
+              "key_code" : "f"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
+          },
+          "to" : [ {
+            "key_code" : "tab"
+          } ],
+          "type" : "basic"
         } ]
       }, {
         "description" : "Different persistent layers",
@@ -559,31 +577,6 @@
           "to" : [ {
             "set_variable" : {
               "name" : "symbol-layer",
-              "value" : 0
-            }
-          }, {
-            "set_variable" : {
-              "name" : "number-layer",
-              "value" : 0
-            }
-          } ],
-          "conditions" : [ {
-            "name" : "symbol-layer",
-            "value" : 1,
-            "type" : "variable_if"
-          }, {
-            "name" : "number-layer",
-            "value" : 1,
-            "type" : "variable_if"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "page_up"
-          },
-          "to" : [ {
-            "set_variable" : {
-              "name" : "symbol-layer",
               "value" : 1
             }
           }, {
@@ -599,6 +592,31 @@
           }, {
             "name" : "number-layer",
             "value" : 0,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "page_up"
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
+          } ],
+          "conditions" : [ {
+            "name" : "symbol-layer",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "name" : "number-layer",
+            "value" : 1,
             "type" : "variable_if"
           } ],
           "type" : "basic"

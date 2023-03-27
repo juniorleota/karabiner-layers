@@ -26,7 +26,10 @@
              {
               :des   "global rules"
               :rules [
+                      ; press j+k to escape
                       [[:j :k] :escape]
+                      ; press d+f to indent
+                      [[:d :f] :tab]
                       ; seems to be issue with using home row mode
                       ;[:f [] nil {:alone :f :held :left_command}]
                       ]
