@@ -3,7 +3,7 @@
                        :default true
                        ;; simultaneous key press threshold
                        ;; simlayer is implemented with to_if_alone and simultaneous key press feature
-                       :sim    210
+                       :sim     210
                        ;; to_delayed_action_delay_milliseconds
                        ;; checkout karabiner's documentation
                        ;; https://pqrs.org/osx/karabiner/json.html
@@ -29,25 +29,46 @@
               :des   "global rules"
               :rules [
                       [[:j :k] :escape]
-                      [[:d :f] :return_or_enter]
                       ; seems to be issue with using home row mode
                       ;[:f [] nil {:alone :f :held :left_command}]
                       ]
               }
              {:des   "Different persistent layers"
               :rules [
-                      [[:k :l] ["symbol-layer" 0] ["symbol-layer" 1]]
-                      [[:k :l] ["symbol-layer" 1] ["symbol-layer" 0]]
+                      ; if symbol layer on then toggle off
+                      [:page_up ["symbol-layer" 0] ["symbol-layer" 1]]
+                      ; if symbol layer off then toggle on
+                      [:page_up ["symbol-layer" 1] ["symbol-layer" 0]]
                       :symbol-layer
-
-                      [:##return_or_enter [:return_or_enter ["symbol-layer" 0]]]
-                      [:##escape [:escape ["symbol-layer" 0]]]
+                      ; upper layer left
+                      [:e :equal_sign]
+                      [:r :!Sequal_sign]
+                      ; upper layer right
+                      [:u :hyphen]
+                      [:i :!Shyphen]
+                      [:backslash :!Sbackslash]
+                      ; middle layer left
                       [:a :!S1]
                       [:s :!S2]
                       [:d :!S3]
                       [:f :!S4]
                       [:g :!S5]
-                      [:!Tl [:return_or_enter ["layer-1 0"]]]]}
+                      ; middle layer right
+                      [:h :!S6]
+                      [:j :!S7]
+                      [:k :!S8]
+                      [:l :!S9]
+                      [:semicolon :!S0]
+                      ; bottom layer left
+                      [:c :grave_accent_and_tilde]
+                      [:v :!Sgrave_accent_and_tilde]
+                      ; bottom layer right
+                      [:m :!Sopen_bracket]
+                      [:comma :!Sclose_bracket]
+                      [:period :open_bracket]
+                      [:slash :close_bracket]
+
+                      ]}
              {:des   "numbers layers"
               :rules [:number-mode
                       [:q :equal_sign]
