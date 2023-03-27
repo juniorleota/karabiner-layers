@@ -3,7 +3,7 @@
                        :default true
                        ;; simultaneous key press threshold
                        ;; simlayer is implemented with to_if_alone and simultaneous key press feature
-                       :sim    100
+                       :sim    50
                        ;; to_delayed_action_delay_milliseconds
                        ;; checkout karabiner's documentation
                        ;; https://pqrs.org/osx/karabiner/json.html
@@ -13,7 +13,7 @@
                        ;; to_if_alone_timeout_milliseconds
                        ;; affects to_if_alone behavior
                        ;; simlayer is implemented with to_if_alone and simultaneous key press feature
-                       :alone   1000
+                       :alone   500
                        ;; to_if_held_down_threshold_milliseconds
                        ;; check the doc, I don't know what does this mean.
                        ;; maybe press this many milliseconds counts a "held" ?
