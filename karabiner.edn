@@ -39,6 +39,10 @@
                       [:page_up ["symbol-layer" 0] ["symbol-layer" 1]]
                       ; if symbol layer off then toggle on
                       [:page_up ["symbol-layer" 1] ["symbol-layer" 0]]
+
+                      ]}
+             {:des   "persistent layer for symbols"
+              :rules [
                       :symbol-layer
                       ; upper layer left
                       [:e :equal_sign]
@@ -67,7 +71,6 @@
                       [:comma :!Sclose_bracket]
                       [:period :open_bracket]
                       [:slash :close_bracket]
-
                       ]}
              {:des   "numbers layers"
               :rules [:number-mode
