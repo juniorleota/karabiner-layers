@@ -35,11 +35,17 @@
               }
              {:des   "Different persistent layers"
               :rules [
-                      ; if symbol layer on then toggle off
-                      [:page_up ["symbol-layer" 0] ["symbol-layer" 1]]
-                      ; if symbol layer off then toggle on
-                      [:page_up ["symbol-layer" 1] ["symbol-layer" 0]]
-
+                      ; if symbol layer on then go to number layer
+                      [:page_up [["symbol-layer" 0] ["number-layer" 1]] [["symbol-layer" 1] ["number-layer" 0]]]
+                      ; if number layer then go to base layer
+                      [:page_up [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 1]]]
+                      ; if both symbol layer and number layer then go to base layer
+                      [:page_up [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 1] ["number-layer" 1]]]
+                      ; if base layer on then go to symbol layer
+                      [:page_up [["symbol-layer" 1] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 0]]]
+                      ; reset to initial layer mechanisms
+                      [:escape [:escape ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:page_down [["symbol-layer" 0] ["number-layer" 0]]]
                       ]}
              {:des   "persistent layer for symbols"
               :rules [
@@ -72,8 +78,8 @@
                       [:period :open_bracket]
                       [:slash :close_bracket]
                       ]}
-             {:des   "numbers layers"
-              :rules [:number-mode
+             {:des   "number persistent layer"
+              :rules [:number-layer
                       [:q :equal_sign]
                       [:a :1]
                       [:s :2]
@@ -87,51 +93,67 @@
                       [:semicolon :0]
                       [:comma :open_bracket]
                       [:period :close_bracket]
-                      ]
-              }
-             ;
-             {:des   "symbols layers"
-              :rules [:symbol-mode
-                      ; upper layer left
-                      [:e :equal_sign]
-                      [:r :!Sequal_sign]
-                      ; upper layer right
-                      [:u :hyphen]
-                      [:i :!Shyphen]
-                      [:backslash :!Sbackslash]
-                      ; middle layer left
-                      [:a :!S1]
-                      [:s :!S2]
-                      [:d :!S3]
-                      [:f :!S4]
-                      [:g :!S5]
-                      ; middle layer right
-                      [:h :!S6]
-                      [:j :!S7]
-                      [:k :!S8]
-                      [:l :!S9]
-                      [:semicolon :!S0]
-                      ; bottom layer left
-                      [:c :grave_accent_and_tilde]
-                      [:v :!Sgrave_accent_and_tilde]
-                      ; bottom layer right
-                      [:m :!Sopen_bracket]
-                      [:comma :!Sclose_bracket]
-                      [:period :open_bracket]
-                      [:slash :close_bracket]
-                      ]
-              }
-             {:des   "navigation mode"
-              :rules [:navigation-mode
-                      ; arrows layer
-                      [:h :left_arrow]
-                      [:j :down_arrow]
-                      [:k :up_arrow]
-                      [:l :right_arrow]
-                      ; page up or down layer
-                      [:d :page_down]
-                      [:u :page_up]
-                      ]
-              }
+                      ]}
+              {:des   "numbers sim layer"
+               :rules [:number-mode
+                       [:q :equal_sign]
+                       [:a :1]
+                       [:s :2]
+                       [:d :3]
+                       [:f :4]
+                       [:g :5]
+                       [:h :6]
+                       [:j :7]
+                       [:k :8]
+                       [:l :9]
+                       [:semicolon :0]
+                       [:comma :open_bracket]
+                       [:period :close_bracket]
+                       ]
+               }
+              ;
+              {:des   "symbols layers"
+               :rules [:symbol-mode
+                       ; upper layer left
+                       [:e :equal_sign]
+                       [:r :!Sequal_sign]
+                       ; upper layer right
+                       [:u :hyphen]
+                       [:i :!Shyphen]
+                       [:backslash :!Sbackslash]
+                       ; middle layer left
+                       [:a :!S1]
+                       [:s :!S2]
+                       [:d :!S3]
+                       [:f :!S4]
+                       [:g :!S5]
+                       ; middle layer right
+                       [:h :!S6]
+                       [:j :!S7]
+                       [:k :!S8]
+                       [:l :!S9]
+                       [:semicolon :!S0]
+                       ; bottom layer left
+                       [:c :grave_accent_and_tilde]
+                       [:v :!Sgrave_accent_and_tilde]
+                       ; bottom layer right
+                       [:m :!Sopen_bracket]
+                       [:comma :!Sclose_bracket]
+                       [:period :open_bracket]
+                       [:slash :close_bracket]
+                       ]
+               }
+              {:des   "navigation mode"
+               :rules [:navigation-mode
+                       ; arrows layer
+                       [:h :left_arrow]
+                       [:j :down_arrow]
+                       [:k :up_arrow]
+                       [:l :right_arrow]
+                       ; page up or down layer
+                       [:d :page_down]
+                       [:u :page_up]
+                       ]
+               }
              ]
  }
