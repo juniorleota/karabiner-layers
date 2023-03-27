@@ -37,10 +37,10 @@
                       [:page_up [["symbol-layer" 0] ["number-layer" 1]] [["symbol-layer" 1] ["number-layer" 0]]]
                       ; if number layer then go to base layer
                       [:page_up [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 1]]]
-                      ; if both symbol layer and number layer then go to base layer
-                      [:page_up [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 1] ["number-layer" 1]]]
                       ; if base layer on then go to symbol layer
                       [:page_up [["symbol-layer" 1] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 0]]]
+                      ; shouldn't happen but if both symbol layer and number layer are on then go to base layer
+                      [:page_up [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 1] ["number-layer" 1]]]
                       ; reset to initial layer mechanisms
                       [:escape [:escape ["symbol-layer" 0] ["number-layer" 0]]]
                       [:page_down [["symbol-layer" 0] ["number-layer" 0]]]
