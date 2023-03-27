@@ -19,7 +19,7 @@
                        ;; maybe press this many milliseconds counts a "held" ?
                        :held    300}}
  :simlayers {
-             :navigation-mode {:key :spacebar}
+             :navigation-mode {:key :delete_or_backspace}
              }
 
  :main      [
