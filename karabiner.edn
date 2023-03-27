@@ -3,7 +3,7 @@
                        :default true
                        ;; simultaneous key press threshold
                        ;; simlayer is implemented with to_if_alone and simultaneous key press feature
-                       :sim    50
+                       :sim    210
                        ;; to_delayed_action_delay_milliseconds
                        ;; checkout karabiner's documentation
                        ;; https://pqrs.org/osx/karabiner/json.html
@@ -56,7 +56,7 @@
                       ; upper layer right
                       [:u :hyphen]
                       [:i :!Shyphen]
-                      [:backslash :!Sbackslash]
+                      ;[:backslash :!Sbackslash]
                       ; middle layer left
                       [:a :!S1]
                       [:s :!S2]
@@ -69,6 +69,7 @@
                       [:k :!S8]
                       [:l :!S9]
                       [:semicolon :!S0]
+                      [:quote :!Squote]
                       ; bottom layer left
                       [:c :grave_accent_and_tilde]
                       [:v :!Sgrave_accent_and_tilde]

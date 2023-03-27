@@ -474,7 +474,7 @@
   }, {
     "complex_modifications" : {
       "parameters" : {
-        "basic.simultaneous_threshold_milliseconds" : 50,
+        "basic.simultaneous_threshold_milliseconds" : 210,
         "basic.to_delayed_action_delay_milliseconds" : 500,
         "basic.to_if_alone_timeout_milliseconds" : 500,
         "basic.to_if_held_down_threshold_milliseconds" : 300
@@ -695,20 +695,6 @@
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "backslash"
-          },
-          "to" : [ {
-            "key_code" : "backslash",
-            "modifiers" : [ "left_shift" ]
-          } ],
-          "conditions" : [ {
-            "name" : "symbol-layer",
-            "value" : 1,
-            "type" : "variable_if"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
             "key_code" : "a"
           },
           "to" : [ {
@@ -839,6 +825,20 @@
           },
           "to" : [ {
             "key_code" : "0",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "symbol-layer",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "quote"
+          },
+          "to" : [ {
+            "key_code" : "quote",
             "modifiers" : [ "left_shift" ]
           } ],
           "conditions" : [ {
