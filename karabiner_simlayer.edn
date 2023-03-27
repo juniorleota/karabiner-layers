@@ -34,7 +34,7 @@
                  ;[:f [] nil {:alone :f :held :left_command}]
                  ]
          }
-        {:des   "enter-mode for numbers"
+        {:des   "numbers layers"
          :rules [:number-mode
                  [:q :equal_sign]
                  [:a :1]
@@ -52,7 +52,7 @@
                  ]
          }
         ;
-        {:des   "space mode for symbols"
+        {:des   "symbols layers"
          :rules [:symbol-mode
                  ; upper layer left
                  [:e :equal_sign]
@@ -83,7 +83,7 @@
                  [:slash :close_bracket]
                  ]
          }
-        {:des   "backspace mode for navigation"
+        {:des   "navigation mode"
          :rules [:navigation-mode
                  ; arrows layer
                  [:h :left_arrow]
