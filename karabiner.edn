@@ -19,8 +19,6 @@
                        ;; maybe press this many milliseconds counts a "held" ?
                        :held    300}}
  :simlayers {
-             :symbol-mode     {:key :delete_or_backspace}
-             :number-mode     {:key :return_or_enter}
              :navigation-mode {:key :spacebar}
              }
 
