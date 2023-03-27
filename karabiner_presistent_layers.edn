@@ -14,8 +14,8 @@
                  [:j :7 ["number-mode" 1]]
                  [:k :8 ["number-mode" 1]]
                  [:l :9 ["number-mode" 1]]
-                 [:p :hyphen ["number-mode" 1]]
                  [:semicolon :0 ["number-mode" 1]]
+                 [:p :hyphen ["number-mode" 1]]
                  ]
          }
         {
