@@ -26,10 +26,16 @@
              {
               :des   "global rules"
               :rules [
+                      ; right combo setup
                       ; press j+k to escape
-                      [[:j :k] :escape]
                       ; press d+f to indent
                       [[:d :f] :tab]
+                      ;[[:comma :period] :left_control]
+                      ; right combo setup
+                      [[:j :k] :escape]
+                      [[:k :l] :right_option]
+                      [[:u :i] :right_command]
+                      [[:i :o] :right_control]
                       ; seems to be issue with using home row mode
                       ;[:f [] nil {:alone :f :held :left_command}]
                       ]
