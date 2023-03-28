@@ -3,7 +3,7 @@
                        :default true
                        ;; simultaneous key press threshold
                        ;; simlayer is implemented with to_if_alone and simultaneous key press feature
-                       :sim   150
+                       :sim  50
                        ;; to_delayed_action_delay_milliseconds
                        ;; checkout karabiner's documentation
                        ;; https://pqrs.org/osx/karabiner/json.html
@@ -15,7 +15,7 @@
                        ;; simlayer is implemented with to_if_alone and simultaneous key press feature
                        :alone   500
                        ;; to_if_held_down_threshold_milliseconds
-                       ;; check the doc, I don't know what does this mean.
+                       ;; check the doc, i don't know what does this mean.
                        ;; maybe press this many milliseconds counts a "held" ?
                        :held    300}}
  :simlayers {
@@ -27,11 +27,14 @@
               :des   "global rules"
               :rules [
                       ; right combo setup
-                      ; press j+k to escape
                       ; press d+f to indent
                       [[:d :f] :tab]
+                      [[:s :d] :left_option]
+                      [[:e :r] :right_command]
+                      [[:w :e] :right_control]
                       ;[[:comma :period] :left_control]
                       ; right combo setup
+                      ; press j+k to escape
                       [[:j :k] :escape]
                       [[:k :l] :right_option]
                       [[:u :i] :right_command]
@@ -43,13 +46,13 @@
              {:des   "Different persistent layers"
               :rules [
                       ; if symbol layer on then go to number layer
-                      [:page_up [["symbol-layer" 0] ["number-layer" 1]] [["symbol-layer" 1] ["number-layer" 0]]]
+                      [:f20 [["symbol-layer" 0] ["number-layer" 1]] [["symbol-layer" 1] ["number-layer" 0]]]
                       ; if number layer activated then go to base layer
-                      [:page_up [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 1]]]
+                      [:f20 [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 1]]]
                       ; if base layer activated then go to symbol layer
-                      [:page_up [["symbol-layer" 1] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 0]]]
+                      [:f20 [["symbol-layer" 1] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 0]]]
                       ; shouldn't happen but if both symbol layer and number layer are activated then go to base layer
-                      [:page_up [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 1] ["number-layer" 1]]]
+                      [:f20 [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 1] ["number-layer" 1]]]
                       ; reset to base layer mechanisms
                       [:escape [:escape ["symbol-layer" 0] ["number-layer" 0]]]
                       [:page_down [["symbol-layer" 0] ["number-layer" 0]]]
@@ -99,8 +102,6 @@
                       [:k :8]
                       [:l :9]
                       [:semicolon :0]
-                      [:comma :open_bracket]
-                      [:period :close_bracket]
                       ]}
              {:des   "navigation mode"
               :rules [:navigation-mode
