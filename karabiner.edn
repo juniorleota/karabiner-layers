@@ -56,7 +56,7 @@
                       [:f20 [["symbol-layer" 1]["number-layer" 0]] [["symbol-layer" 0]["number-layer" 0]]]
                       ; shouldn't happen but if both symbol layer and number layer are activated then go to base layer
                       [:f20 [["symbol-layer" 0]["number-layer" 0]] [["symbol-layer" 1]["number-layer" 1]]]
-                      ; one shot layers
+                      ; one shot layers - still need todo in the future, for now it will just be used for reseting to base layer
                       [:f19 [["symbol-layer" 0]["number-layer" 0]["tmp-symbol-layer" 1]["tmp-number-layer" 0]] [["tmp-symbol-layer" 0]["tmp-number-layer" 0]]]
                       [:f19 [["symbol-layer" 0]["number-layer" 0]["tmp-symbol-layer" 0]["tmp-number-layer" 1]] [["tmp-symbol-layer" 1]["tmp-number-layer" 0]]]
                       [:f19 [["symbol-layer" 0]["number-layer" 0]["tmp-symbol-layer" 0]["tmp-number-layer" 0]] [["tmp-symbol-layer" 0]["tmp-number-layer" 1]]]
