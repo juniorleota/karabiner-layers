@@ -3,7 +3,7 @@
                        :default true
                        ;; simultaneous key press threshold
                        ;; simlayer is implemented with to_if_alone and simultaneous key press feature
-                       :sim  30
+                       :sim  20
                        ;; to_delayed_action_delay_milliseconds
                        ;; checkout karabiner's documentation
                        ;; https://pqrs.org/osx/karabiner/json.html
@@ -26,6 +26,9 @@
              {
               :des   "global rules"
               :rules [
+                      ; hyper key
+                      [:end [:left_command :left_option :left_shift :left_control]]
+                      [:page_down [:left_command :left_option :left_shift :left_control]]
                       ; right combo setup
                       ; press d+f to indent
                       [[:d :f] :tab]
@@ -46,16 +49,20 @@
              {:des   "Different persistent layers"
               :rules [
                       ; if symbol layer on then go to number layer
-                      [:f20 [["symbol-layer" 0] ["number-layer" 1]] [["symbol-layer" 1] ["number-layer" 0]]]
+                      [:f20 [["symbol-layer" 0]["number-layer" 1]] [["symbol-layer" 1]["number-layer" 0]]]
                       ; if number layer activated then go to base layer
-                      [:f20 [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 1]]]
+                      [:f20 [["symbol-layer" 0]["number-layer" 0]] [["symbol-layer" 0]["number-layer" 1]]]
                       ; if base layer activated then go to symbol layer
-                      [:f20 [["symbol-layer" 1] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 0]]]
+                      [:f20 [["symbol-layer" 1]["number-layer" 0]] [["symbol-layer" 0]["number-layer" 0]]]
                       ; shouldn't happen but if both symbol layer and number layer are activated then go to base layer
-                      [:f20 [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 1] ["number-layer" 1]]]
+                      [:f20 [["symbol-layer" 0]["number-layer" 0]] [["symbol-layer" 1]["number-layer" 1]]]
+                      ; one shot layers
+                      [:f19 [["symbol-layer" 0]["number-layer" 0]["tmp-symbol-layer" 1]["tmp-number-layer" 0]] [["tmp-symbol-layer" 0]["tmp-number-layer" 0]]]
+                      [:f19 [["symbol-layer" 0]["number-layer" 0]["tmp-symbol-layer" 0]["tmp-number-layer" 1]] [["tmp-symbol-layer" 1]["tmp-number-layer" 0]]]
+                      [:f19 [["symbol-layer" 0]["number-layer" 0]["tmp-symbol-layer" 0]["tmp-number-layer" 0]] [["tmp-symbol-layer" 0]["tmp-number-layer" 1]]]
+                      [:f19 [["symbol-layer" 0]["number-layer" 0]["tmp-symbol-layer" 0]["tmp-number-layer" 0]] [["tmp-symbol-layer" 1]["tmp-number-layer" 1]]]
                       ; reset to base layer mechanisms
                       [:escape [:escape ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:page_down [["symbol-layer" 0] ["number-layer" 0]]]
                       ]}
              {:des   "persistent layer for symbols"
               :rules [
