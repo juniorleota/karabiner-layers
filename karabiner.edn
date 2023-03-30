@@ -3,6 +3,7 @@
                        :default true
                        ;; simultaneous key press threshold
                        ;; simlayer is implemented with to_if_alone and simultaneous key press feature
+                       ;; this is set super low to avoid conflict of modifier keys and during typing common keys such as er
                        :sim  20
                        ;; to_delayed_action_delay_milliseconds
                        ;; checkout karabiner's documentation
