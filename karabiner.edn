@@ -27,23 +27,23 @@
              {
               :des   "global rules"
               :rules [
-                      ; hyper key
+                      ; hyper key for app switching
                       [:end [:left_command :left_option :left_shift :left_control]]
                       [:page_down [:left_command :left_option :left_shift :left_control]]
                       ; right combo setup
-                      ; press d+f to indent
+                      ; simultaneous 2 key presses for modifiers
                       [[:d :f] :tab]
                       [[:s :d] :left_option]
                       [[:e :r] :right_command]
                       [[:w :e] :right_control]
-                      ;[[:comma :period] :left_control]
+
                       ; right combo setup
-                      ; press j+k to escape
+                      ; simultaneous 2 key presses for modifiers
                       [[:j :k] :escape]
                       [[:k :l] :right_option]
                       [[:u :i] :right_command]
                       [[:i :o] :right_control]
-                      ; seems to be issue with using home row mode
+                      ; seems to be issue with holding down key to act as modifier in current mac
                       ;[:f [] nil {:alone :f :held :left_command}]
                       ]
               }
