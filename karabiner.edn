@@ -49,6 +49,8 @@
               }
              {:des   "Different persistent layers"
               :rules [
+                      ; f19 mapped to left command
+                      ; f20 mapped to right command
                       ; if symbol layer on then go to number layer
                       [:f20 [["symbol-layer" 0]["number-layer" 1]] [["symbol-layer" 1]["number-layer" 0]]]
                       ; if number layer activated then go to base layer
