@@ -497,6 +497,20 @@
           "type" : "basic"
         }, {
           "from" : {
+            "key_code" : "home"
+          },
+          "to" : [ {
+            "key_code" : "left_command"
+          }, {
+            "key_code" : "left_option"
+          }, {
+            "key_code" : "left_shift"
+          }, {
+            "key_code" : "left_control"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
             "simultaneous" : [ {
               "key_code" : "comma"
             }, {
@@ -1738,10 +1752,10 @@
       "manipulate_caps_lock_led" : true,
       "simple_modifications" : [ {
         "from" : {
-          "key_code" : "home"
+          "key_code" : "left_command"
         },
         "to" : [ {
-          "key_code" : "tab"
+          "key_code" : "f19"
         } ]
       }, {
         "from" : {
@@ -1749,13 +1763,6 @@
         },
         "to" : [ {
           "key_code" : "f20"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "left_command"
-        },
-        "to" : [ {
-          "key_code" : "f19"
         } ]
       } ],
       "treat_as_built_in_keyboard" : false
