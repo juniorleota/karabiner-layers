@@ -4,7 +4,7 @@
                        ;; simultaneous key press threshold
                        ;; simlayer is implemented with to_if_alone and simultaneous key press feature
                        ;; this is set super low to avoid conflict of modifier keys and during typing common keys such as er
-                       :sim  20
+                       :sim  25
                        ;; to_delayed_action_delay_milliseconds
                        ;; checkout karabiner's documentation
                        ;; https://pqrs.org/osx/karabiner/json.html
@@ -29,7 +29,10 @@
               :rules [
                       ; hyper key for app switching
                       [:end [:left_command :left_option :left_shift :left_control]]
-                      [:page_down [:left_command :left_option :left_shift :left_control]]
+                      [[:comma :m] [:left_command :left_option :left_shift :left_control]]
+                      ; meh key for custom shortcuts for intellij
+                      [:page_down [:left_option :left_shift :left_control]]
+                      [[:c :v] [:left_option :left_shift :left_control]]
                       ; right combo setup
                       ; simultaneous 2 key presses for modifiers
                       [[:d :f] :tab]
@@ -51,10 +54,6 @@
               :rules [
                       ; f19 mapped to left command
                       ; f20 mapped to right command
-                      ; if symbol layer on then go to number layer
-                      [:f20 [["symbol-layer" 0]["number-layer" 1]] [["symbol-layer" 1]["number-layer" 0]]]
-                      ; if number layer activated then go to base layer
-                      [:f20 [["symbol-layer" 0]["number-layer" 0]] [["symbol-layer" 0]["number-layer" 1]]]
                       ; if base layer activated then go to symbol layer
                       [:f20 [["symbol-layer" 1]["number-layer" 0]] [["symbol-layer" 0]["number-layer" 0]]]
                       ; shouldn't happen but if both symbol layer and number layer are activated then go to base layer
@@ -71,6 +70,8 @@
              {:des   "persistent layer for symbols"
               :rules [
                       :symbol-layer
+                      ; next layer is number layer
+                      [:f20 [["symbol-layer" 0]["number-layer" 1]]]
                       ; upper layer left
                       [:e :equal_sign]
                       [:r :!Sequal_sign]
@@ -102,6 +103,8 @@
                       ]}
              {:des   "number persistent layer"
               :rules [:number-layer
+                      ; next layer is back to base layer
+                      [:f20 [["symbol-layer" 0]["number-layer" 0]]]
                       [:q :equal_sign]
                       [:a :1]
                       [:s :2]
@@ -116,6 +119,8 @@
                       ]}
              {:des   "navigation mode"
               :rules [:navigation-mode
+                      ; next layer is back to base layer
+                      [:f20 [["symbol-layer" 0]["number-layer" 0]]]
                       ; arrows layer
                       [:h :left_arrow]
                       [:j :down_arrow]
@@ -124,9 +129,7 @@
                       ; page up or down layer
                       [:d :page_down]
                       [:u :page_up]
-                      ; y simulates the old ^
-                      [:y :home]
-                      ; f simulates $
+                      [:a :home]
                       [:f :end]
                       ]
               }
