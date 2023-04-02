@@ -61,10 +61,6 @@
                       [:f20 [["symbol-layer" 0]["number-layer" 0]] [["symbol-layer" 1]["number-layer" 1]]]
                       ; one shot layers - still need todo in the future, for now it will just be used for reseting to base layer
                       [:f19 [["symbol-layer" 0]["number-layer" 0]]]
-                      ;[:f19 [["symbol-layer" 0]["number-layer" 0]["tmp-symbol-layer" 1]["tmp-number-layer" 0]] [["tmp-symbol-layer" 0]["tmp-number-layer" 0]]]
-                      ;[:f19 [["symbol-layer" 0]["number-layer" 0]["tmp-symbol-layer" 0]["tmp-number-layer" 1]] [["tmp-symbol-layer" 1]["tmp-number-layer" 0]]]
-                      ;[:f19 [["symbol-layer" 0]["number-layer" 0]["tmp-symbol-layer" 0]["tmp-number-layer" 0]] [["tmp-symbol-layer" 0]["tmp-number-layer" 1]]]
-                      ;[:f19 [["symbol-layer" 0]["number-layer" 0]["tmp-symbol-layer" 0]["tmp-number-layer" 0]] [["tmp-symbol-layer" 1]["tmp-number-layer" 1]]]
                       ; reset to base layer mechanisms
                       [:escape [:escape ["symbol-layer" 0] ["number-layer" 0]]]
                       ]}
@@ -74,33 +70,33 @@
                       ; next layer is number layer
                       [:f20 [["symbol-layer" 0]["number-layer" 1]]]
                       ; upper layer left
-                      [:e :equal_sign]
-                      [:r :!Sequal_sign]
+                      [:e [:equal_sign ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:r [:!Sequal_sign ["symbol-layer" 0] ["number-layer" 0]]]
                       ; upper layer right
-                      [:u :hyphen]
-                      [:i :!Shyphen]
-                      ;[:backslash :!Sbackslash]
+                      [:u [:hyphen ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:i [:!Shyphen ["symbol-layer" 0] ["number-layer" 0]]]
+                      ;[:backslash [:!Sbackslash ["symbol-layer" 0] ["number-layer" 0]]]
                       ; middle layer left
-                      [:a :!S1]
-                      [:s :!S2]
-                      [:d :!S3]
-                      [:f :!S4]
-                      [:g :!S5]
+                      [:a [:!S1 ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:s [:!S2 ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:d [:!S3 ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:f [:!S4 ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:g [:!S5 ["symbol-layer" 0] ["number-layer" 0]]]
                       ; middle layer right
-                      [:h :!S6]
-                      [:j :!S7]
-                      [:k :!S8]
-                      [:l :!S9]
-                      [:semicolon :!S0]
-                      [:quote :!Squote]
+                      [:h [:!S6 ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:j [:!S7 ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:k [:!S8 ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:l [:!S9 ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:semicolon [:!S0 ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:quote [:!Squote ["symbol-layer" 0] ["number-layer" 0]]]
                       ; bottom layer left
-                      [:c :grave_accent_and_tilde]
-                      [:v :!Sgrave_accent_and_tilde]
+                      [:c [:grave_accent_and_tilde ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:v [:!Sgrave_accent_and_tilde ["symbol-layer" 0] ["number-layer" 0]]]
                       ; bottom layer right
-                      [:m :!Sopen_bracket]
-                      [:comma :!Sclose_bracket]
-                      [:period :open_bracket]
-                      [:slash :close_bracket]
+                      [:m [:!Sopen_bracket ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:comma [:!Sclose_bracket ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:period [:open_bracket ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:slash [:close_bracket ["symbol-layer" 0] ["number-layer" 0]]]
                       ]}
              {:des   "number persistent layer"
               :rules [:number-layer
