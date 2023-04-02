@@ -33,12 +33,13 @@
                       [[:comma :m] [:left_command :left_option :left_shift :left_control]]
                       ; meh key for custom shortcuts for intellij
                       [:page_down [:left_option :left_shift :left_control]]
+                      [:page_up [:left_option :left_shift :left_control]]
                       [[:c :v] [:left_option :left_shift :left_control]]
                       ; right combo setup
                       ; simultaneous 2 key presses for modifiers
                       [[:d :f] :tab]
                       [[:s :d] :left_option]
-                      [:2 [:left_command :left_option :left_shift :left_control]]
+                      [:2 [:left_option :left_shift :left_control]]
                       [:3 :left_command]
                       [[:w :e] :right_control]
 
