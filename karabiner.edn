@@ -38,17 +38,19 @@
                       ; simultaneous 2 key presses for modifiers
                       [[:d :f] :tab]
                       [[:s :d] :left_option]
-                      [[:e :r] :right_command]
+                      [:2 [:left_command :left_option :left_shift :left_control]]
+                      [:3 :left_command]
                       [[:w :e] :right_control]
 
                       ; right combo setup
                       ; simultaneous 2 key presses for modifiers
                       [[:j :k] :escape]
                       [[:k :l] :right_option]
-                      [[:u :i] :right_command]
+                      [:8 :right_command]
+                      [:9 [:left_command :left_option :left_shift :left_control]]
                       [[:i :o] :right_control]
                       ; seems to be issue with holding down key to act as modifier in current mac
-                      ;[:f [] nil {:alone :f :held :left_command}]
+                      ; [:f [] nil {:alone :f :held :left_command}]
                       ]
               }
              {:des   "Different persistent layers"

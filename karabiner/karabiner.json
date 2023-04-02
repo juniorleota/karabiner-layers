@@ -605,20 +605,24 @@
           "type" : "basic"
         }, {
           "from" : {
-            "simultaneous" : [ {
-              "key_code" : "e"
-            }, {
-              "key_code" : "r"
-            } ],
-            "simultaneous_options" : {
-              "detect_key_down_uninterruptedly" : false,
-              "key_down_order" : "insensitive",
-              "key_up_order" : "insensitive",
-              "key_up_when" : "any"
-            }
+            "key_code" : "2"
           },
           "to" : [ {
-            "key_code" : "right_command"
+            "key_code" : "left_command"
+          }, {
+            "key_code" : "left_option"
+          }, {
+            "key_code" : "left_shift"
+          }, {
+            "key_code" : "left_control"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "3"
+          },
+          "to" : [ {
+            "key_code" : "left_command"
           } ],
           "type" : "basic"
         }, {
@@ -677,20 +681,24 @@
           "type" : "basic"
         }, {
           "from" : {
-            "simultaneous" : [ {
-              "key_code" : "u"
-            }, {
-              "key_code" : "i"
-            } ],
-            "simultaneous_options" : {
-              "detect_key_down_uninterruptedly" : false,
-              "key_down_order" : "insensitive",
-              "key_up_order" : "insensitive",
-              "key_up_when" : "any"
-            }
+            "key_code" : "8"
           },
           "to" : [ {
             "key_code" : "right_command"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "9"
+          },
+          "to" : [ {
+            "key_code" : "left_command"
+          }, {
+            "key_code" : "left_option"
+          }, {
+            "key_code" : "left_shift"
+          }, {
+            "key_code" : "left_control"
           } ],
           "type" : "basic"
         }, {
@@ -828,6 +836,16 @@
           },
           "to" : [ {
             "key_code" : "equal_sign"
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -842,6 +860,16 @@
           "to" : [ {
             "key_code" : "equal_sign",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -855,6 +883,16 @@
           },
           "to" : [ {
             "key_code" : "hyphen"
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -869,6 +907,16 @@
           "to" : [ {
             "key_code" : "hyphen",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -883,6 +931,16 @@
           "to" : [ {
             "key_code" : "1",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -897,6 +955,16 @@
           "to" : [ {
             "key_code" : "2",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -911,6 +979,16 @@
           "to" : [ {
             "key_code" : "3",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -925,6 +1003,16 @@
           "to" : [ {
             "key_code" : "4",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -939,6 +1027,16 @@
           "to" : [ {
             "key_code" : "5",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -953,6 +1051,16 @@
           "to" : [ {
             "key_code" : "6",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -967,6 +1075,16 @@
           "to" : [ {
             "key_code" : "7",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -981,6 +1099,16 @@
           "to" : [ {
             "key_code" : "8",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -995,6 +1123,16 @@
           "to" : [ {
             "key_code" : "9",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -1009,6 +1147,16 @@
           "to" : [ {
             "key_code" : "0",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -1023,6 +1171,16 @@
           "to" : [ {
             "key_code" : "quote",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -1036,6 +1194,16 @@
           },
           "to" : [ {
             "key_code" : "grave_accent_and_tilde"
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -1050,6 +1218,16 @@
           "to" : [ {
             "key_code" : "grave_accent_and_tilde",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -1064,6 +1242,16 @@
           "to" : [ {
             "key_code" : "open_bracket",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -1078,6 +1266,16 @@
           "to" : [ {
             "key_code" : "close_bracket",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -1091,6 +1289,16 @@
           },
           "to" : [ {
             "key_code" : "open_bracket"
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
@@ -1104,6 +1312,16 @@
           },
           "to" : [ {
             "key_code" : "close_bracket"
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
           } ],
           "conditions" : [ {
             "name" : "symbol-layer",
