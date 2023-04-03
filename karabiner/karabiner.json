@@ -612,7 +612,25 @@
             }
           },
           "to" : [ {
-            "key_code" : "left_option"
+            "key_code" : "delete_or_backspace"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "x"
+            }, {
+              "key_code" : "c"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
+          },
+          "to" : [ {
+            "key_code" : "right_shift"
           } ],
           "type" : "basic"
         }, {
@@ -686,7 +704,7 @@
             }
           },
           "to" : [ {
-            "key_code" : "right_option"
+            "key_code" : "right_command"
           } ],
           "type" : "basic"
         }, {
@@ -695,6 +713,24 @@
           },
           "to" : [ {
             "key_code" : "right_command"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "comma"
+            }, {
+              "key_code" : "period"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
+          },
+          "to" : [ {
+            "key_code" : "right_option"
           } ],
           "type" : "basic"
         }, {
