@@ -73,7 +73,7 @@
                       ; reset to base layer mechanisms
                       [:escape [:escape ["symbol-layer" 0] ["number-layer" 0]]]
                       ]}
-             {:des   "persistent layer for symbols"
+             {:des   "symbol one shot layer"
               :rules [
                       :symbol-layer
                       ; next layer is number layer
@@ -84,6 +84,8 @@
                       ; upper layer right
                       [:u [:hyphen ["symbol-layer" 0] ["number-layer" 0]]]
                       [:i [:!Shyphen ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:o [:!Sbackslash ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:p [:backslash ["symbol-layer" 0] ["number-layer" 0]]]
                       ;[:backslash [:!Sbackslash ["symbol-layer" 0] ["number-layer" 0]]]
                       ; middle layer left
                       [:a [:!S1 ["symbol-layer" 0] ["number-layer" 0]]]

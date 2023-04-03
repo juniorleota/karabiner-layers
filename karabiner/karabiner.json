@@ -854,7 +854,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "persistent layer for symbols",
+        "description" : "symbol one shot layer",
         "manipulators" : [ {
           "from" : {
             "key_code" : "f20"
@@ -953,6 +953,53 @@
           "to" : [ {
             "key_code" : "hyphen",
             "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
+          } ],
+          "conditions" : [ {
+            "name" : "symbol-layer",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "o"
+          },
+          "to" : [ {
+            "key_code" : "backslash",
+            "modifiers" : [ "left_shift" ]
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
+          } ],
+          "conditions" : [ {
+            "name" : "symbol-layer",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "p"
+          },
+          "to" : [ {
+            "key_code" : "backslash"
           }, {
             "set_variable" : {
               "name" : "symbol-layer",
