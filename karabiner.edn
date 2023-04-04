@@ -30,31 +30,34 @@
                       ; hyper key for app switching
                       [:end [:left_command :left_option :left_shift :left_control]]
                       [:home [:left_command :left_option :left_shift :left_control]]
-                      [[:comma :m] [:left_command :left_option :left_shift :left_control]]
                       ; meh key for custom shortcuts for intellij
                       [:page_down [:left_option :left_shift :left_control]]
                       [:page_up [:left_option :left_shift :left_control]]
-                      [[:c :v] [:left_option :left_shift :left_control]]
-                      ; right combo setup
-                      ; simultaneous 2 key presses for modifiers
-                      [[:d :f] :tab]
-                      ; this is for consistency with other keyboards
-                      [[:s :d] :delete_or_backspace]
-                      [[:x :c] :right_shift]
-                      ; meh key for per app shortcuts
+                      ; left combo setup
+                      ; num layer due to lack of keys and lack of home row mod
                       [:2 [:left_option :left_shift :left_control]]
                       [:3 :left_command]
+                      ; top layer
+                      ; middle layer
+                      [[:d :f] :tab]
+                      [[:s :d] :delete_or_backspace]
+                      ; bottom layer
+                      [[:x :c] :right_shift]
+                      [[:c :v] [:delete_or_backspace]]
+                      ; meh key for per app shortcuts
                       [[:w :e] :right_control]
 
                       ; right combo setup
-                      ; simultaneous 2 key presses for modifiers
-                      [[:j :k] :escape]
-                      ; this is for consistency with other keyboards
-                      [[:k :l] :right_command]
+                      ; num layer due to lack of keys and lack of home row mod
                       [:8 :right_command]
-                      [[:comma :period] :right_option]
-                      ; hyper key for global app switching
                       [:9 [:left_command :left_option :left_shift :left_control]]
+                      ; middle layer
+                      [[:j :k] :escape]
+                      [[:k :l] :right_command]
+                      ; bottom layer
+                      [[:comma :period] :right_option]
+                      [[:comma :m] [:left_command :left_option :left_shift :left_control]]
+                      ; hyper key for global app switching
                       [[:i :o] :right_control]
                       ; seems to be issue with holding down key to act as modifier in current mac
                       ; [:f [] nil {:alone :f :held :left_command}]
@@ -82,6 +85,7 @@
                       [:e [:equal_sign ["symbol-layer" 0] ["number-layer" 0]]]
                       [:r [:!Sequal_sign ["symbol-layer" 0] ["number-layer" 0]]]
                       ; upper layer right
+                      [:y [:!Squote ["symbol-layer" 0] ["number-layer" 0]]]
                       [:u [:hyphen ["symbol-layer" 0] ["number-layer" 0]]]
                       [:i [:!Shyphen ["symbol-layer" 0] ["number-layer" 0]]]
                       [:o [:!Sbackslash ["symbol-layer" 0] ["number-layer" 0]]]
@@ -94,6 +98,7 @@
                       [:f [:!S4 ["symbol-layer" 0] ["number-layer" 0]]]
                       [:g [:!S5 ["symbol-layer" 0] ["number-layer" 0]]]
                       ; middle layer right
+                      [:n [:quote ["symbol-layer" 0] ["number-layer" 0]]]
                       [:h [:!S6 ["symbol-layer" 0] ["number-layer" 0]]]
                       [:j [:!S7 ["symbol-layer" 0] ["number-layer" 0]]]
                       [:k [:!S8 ["symbol-layer" 0] ["number-layer" 0]]]
