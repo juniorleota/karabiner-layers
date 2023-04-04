@@ -126,7 +126,7 @@
                       [:l :9]
                       [:semicolon :0]
                       ]}
-             {:des   "navigation mode"
+             {:des   "navigation mode for global vim commands"
               :rules [:navigation-mode
                       ; next layer is back to base layer
                       [:f20 [["symbol-layer" 0] ["number-layer" 0]]]
