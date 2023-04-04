@@ -27,16 +27,11 @@
              {
               :des   "global rules"
               :rules [
-                      ; hyper key for app switching
-                      [:end [:left_command :left_option :left_shift :left_control]]
-                      [:home [:left_command :left_option :left_shift :left_control]]
-                      ; meh key for custom shortcuts for intellij
-                      [:page_down [:left_option :left_shift :left_control]]
-                      [:page_up [:left_option :left_shift :left_control]]
                       ; left combo setup
                       ; num layer due to lack of keys and lack of home row mod
-                      [:2 [:left_option :left_shift :left_control]]
                       [:3 :left_command]
+                      ; meh key for custom app shortcuts
+                      [:2 [:left_option :left_shift :left_control]]
                       ; top layer
                       ; middle layer
                       [[:d :f] :tab]
@@ -50,6 +45,7 @@
                       ; right combo setup
                       ; num layer due to lack of keys and lack of home row mod
                       [:8 :right_command]
+                      ; hyper key for app switching
                       [:9 [:left_command :left_option :left_shift :left_control]]
                       ; middle layer
                       [[:j :k] :escape]
