@@ -483,54 +483,10 @@
         "description" : "global rules",
         "manipulators" : [ {
           "from" : {
-            "key_code" : "end"
+            "key_code" : "3"
           },
           "to" : [ {
             "key_code" : "left_command"
-          }, {
-            "key_code" : "left_option"
-          }, {
-            "key_code" : "left_shift"
-          }, {
-            "key_code" : "left_control"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "home"
-          },
-          "to" : [ {
-            "key_code" : "left_command"
-          }, {
-            "key_code" : "left_option"
-          }, {
-            "key_code" : "left_shift"
-          }, {
-            "key_code" : "left_control"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "page_down"
-          },
-          "to" : [ {
-            "key_code" : "left_option"
-          }, {
-            "key_code" : "left_shift"
-          }, {
-            "key_code" : "left_control"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "page_up"
-          },
-          "to" : [ {
-            "key_code" : "left_option"
-          }, {
-            "key_code" : "left_shift"
-          }, {
-            "key_code" : "left_control"
           } ],
           "type" : "basic"
         }, {
@@ -543,14 +499,6 @@
             "key_code" : "left_shift"
           }, {
             "key_code" : "left_control"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "3"
-          },
-          "to" : [ {
-            "key_code" : "left_command"
           } ],
           "type" : "basic"
         }, {
@@ -586,7 +534,7 @@
             }
           },
           "to" : [ {
-            "key_code" : "delete_or_backspace"
+            "key_code" : "left_command"
           } ],
           "type" : "basic"
         }, {
@@ -734,13 +682,7 @@
             }
           },
           "to" : [ {
-            "key_code" : "left_command"
-          }, {
-            "key_code" : "left_option"
-          }, {
-            "key_code" : "left_shift"
-          }, {
-            "key_code" : "left_control"
+            "key_code" : "return_or_enter"
           } ],
           "type" : "basic"
         }, {
@@ -2042,6 +1984,104 @@
               "key_code" : "delete_or_backspace"
             }, {
               "key_code" : "f"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "navigation-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
+            "key_code" : "w"
+          },
+          "to" : [ {
+            "key_code" : "left_option"
+          }, {
+            "key_code" : "right_arrow"
+          } ],
+          "conditions" : [ {
+            "name" : "navigation-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "navigation-mode",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "left_option"
+          }, {
+            "key_code" : "right_arrow"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "delete_or_backspace"
+            }, {
+              "key_code" : "w"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "navigation-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
+            "key_code" : "b"
+          },
+          "to" : [ {
+            "key_code" : "left_option"
+          }, {
+            "key_code" : "left_arrow"
+          } ],
+          "conditions" : [ {
+            "name" : "navigation-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "navigation-mode",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "left_option"
+          }, {
+            "key_code" : "left_arrow"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "delete_or_backspace"
+            }, {
+              "key_code" : "b"
             } ],
             "simultaneous_options" : {
               "detect_key_down_uninterruptedly" : true,

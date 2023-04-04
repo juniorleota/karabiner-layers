@@ -35,7 +35,7 @@
                       ; top layer
                       ; middle layer
                       [[:d :f] :tab]
-                      [[:s :d] :delete_or_backspace]
+                      [[:s :d] :left_command]
                       ; bottom layer
                       [[:x :c] :right_shift]
                       [[:c :v] [:delete_or_backspace]]
@@ -52,7 +52,7 @@
                       [[:k :l] :right_command]
                       ; bottom layer
                       [[:comma :period] :right_option]
-                      [[:comma :m] [:left_command :left_option :left_shift :left_control]]
+                      [[:comma :m] :return_or_enter]
                       ; hyper key for global app switching
                       [[:i :o] :right_control]
                       ; seems to be issue with holding down key to act as modifier in current mac
@@ -140,6 +140,9 @@
                       [:u :page_up]
                       [:a :home]
                       [:f :end]
+                      ; word jumps
+                      [:w [:left_option :right_arrow]]
+                      [:b [:left_option :left_arrow]]
                       ]
               }
              ]
