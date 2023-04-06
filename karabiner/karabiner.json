@@ -646,7 +646,7 @@
             }
           },
           "to" : [ {
-            "key_code" : "right_command"
+            "key_code" : "return_or_enter"
           } ],
           "type" : "basic"
         }, {
@@ -665,24 +665,6 @@
           },
           "to" : [ {
             "key_code" : "right_option"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "simultaneous" : [ {
-              "key_code" : "comma"
-            }, {
-              "key_code" : "m"
-            } ],
-            "simultaneous_options" : {
-              "detect_key_down_uninterruptedly" : false,
-              "key_down_order" : "insensitive",
-              "key_up_order" : "insensitive",
-              "key_up_when" : "any"
-            }
-          },
-          "to" : [ {
-            "key_code" : "return_or_enter"
           } ],
           "type" : "basic"
         }, {
@@ -709,6 +691,41 @@
         "manipulators" : [ {
           "from" : {
             "key_code" : "f20"
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 1
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
+          } ],
+          "conditions" : [ {
+            "name" : "symbol-layer",
+            "value" : 0,
+            "type" : "variable_if"
+          }, {
+            "name" : "number-layer",
+            "value" : 0,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "comma"
+            }, {
+              "key_code" : "m"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
           },
           "to" : [ {
             "set_variable" : {
@@ -796,6 +813,37 @@
         "manipulators" : [ {
           "from" : {
             "key_code" : "f20"
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 1
+            }
+          } ],
+          "conditions" : [ {
+            "name" : "symbol-layer",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "comma"
+            }, {
+              "key_code" : "m"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
           },
           "to" : [ {
             "set_variable" : {
@@ -1432,6 +1480,46 @@
           } ],
           "type" : "basic"
         }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 1
+            }
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "spacebar"
+            }, {
+              "key_code" : "f20"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "number-layer",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
           "from" : {
             "key_code" : "q"
           },
@@ -1444,6 +1532,38 @@
             "type" : "variable_if"
           } ],
           "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "equal_sign"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "spacebar"
+            }, {
+              "key_code" : "q"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "number-layer",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
         }, {
           "from" : {
             "key_code" : "a"
@@ -1458,6 +1578,38 @@
           } ],
           "type" : "basic"
         }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "1"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "spacebar"
+            }, {
+              "key_code" : "a"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "number-layer",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
           "from" : {
             "key_code" : "s"
           },
@@ -1470,6 +1622,38 @@
             "type" : "variable_if"
           } ],
           "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "2"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "spacebar"
+            }, {
+              "key_code" : "s"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "number-layer",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
         }, {
           "from" : {
             "key_code" : "d"
@@ -1484,6 +1668,38 @@
           } ],
           "type" : "basic"
         }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "3"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "spacebar"
+            }, {
+              "key_code" : "d"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "number-layer",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
           "from" : {
             "key_code" : "f"
           },
@@ -1496,6 +1712,38 @@
             "type" : "variable_if"
           } ],
           "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "4"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "spacebar"
+            }, {
+              "key_code" : "f"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "number-layer",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
         }, {
           "from" : {
             "key_code" : "g"
@@ -1510,6 +1758,38 @@
           } ],
           "type" : "basic"
         }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "5"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "spacebar"
+            }, {
+              "key_code" : "g"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "number-layer",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
           "from" : {
             "key_code" : "h"
           },
@@ -1522,6 +1802,38 @@
             "type" : "variable_if"
           } ],
           "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "6"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "spacebar"
+            }, {
+              "key_code" : "h"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "number-layer",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
         }, {
           "from" : {
             "key_code" : "j"
@@ -1536,6 +1848,38 @@
           } ],
           "type" : "basic"
         }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "7"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "spacebar"
+            }, {
+              "key_code" : "j"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "number-layer",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
           "from" : {
             "key_code" : "k"
           },
@@ -1548,6 +1892,38 @@
             "type" : "variable_if"
           } ],
           "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "8"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "spacebar"
+            }, {
+              "key_code" : "k"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "number-layer",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
         }, {
           "from" : {
             "key_code" : "l"
@@ -1562,6 +1938,38 @@
           } ],
           "type" : "basic"
         }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "9"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "spacebar"
+            }, {
+              "key_code" : "l"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "number-layer",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
           "from" : {
             "key_code" : "semicolon"
           },
@@ -1574,9 +1982,41 @@
             "type" : "variable_if"
           } ],
           "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "0"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "spacebar"
+            }, {
+              "key_code" : "semicolon"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "number-layer",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
         } ]
       }, {
-        "description" : "navigation mode",
+        "description" : "navigation mode for global vim commands",
         "manipulators" : [ {
           "from" : {
             "key_code" : "f20"

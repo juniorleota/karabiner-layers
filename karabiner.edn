@@ -21,6 +21,7 @@
                        :held    300}}
  :simlayers {
              :navigation-mode {:key :delete_or_backspace}
+             :number-layer {:key :spacebar}
              }
 
  :main      [
@@ -49,10 +50,9 @@
                       [:9 [:left_command :left_option :left_shift :left_control]]
                       ; middle layer
                       [[:j :k] :escape]
-                      [[:k :l] :right_command]
+                      [[:k :l] :return_or_enter]
                       ; bottom layer
                       [[:comma :period] :right_option]
-                      [[:comma :m] :return_or_enter]
                       ; hyper key for global app switching
                       [[:i :o] :right_control]
                       ; seems to be issue with holding down key to act as modifier in current mac
@@ -65,6 +65,7 @@
                       ; f20 mapped to right command
                       ; if base layer activated then go to symbol layer
                       [:f20 [["symbol-layer" 1] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 0]]]
+                      [[:comma :m] [["symbol-layer" 1] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 0]]]
                       ; shouldn't happen but if both symbol layer and number layer are activated then go to base layer
                       [:f20 [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 1] ["number-layer" 1]]]
                       ; one shot layers - still need todo in the future, for now it will just be used for reseting to base layer
@@ -77,6 +78,7 @@
                       :symbol-layer
                       ; next layer is number layer
                       [:f20 [["symbol-layer" 0] ["number-layer" 1]]]
+                      [[:comma :m] [["symbol-layer" 0] ["number-layer" 1]]]
                       ; upper layer left
                       [:e [:equal_sign ["symbol-layer" 0] ["number-layer" 0]]]
                       [:r [:!Sequal_sign ["symbol-layer" 0] ["number-layer" 0]]]
