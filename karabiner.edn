@@ -48,13 +48,14 @@
                       [:8 :right_command]
                       ; hyper key for app switching
                       [:9 [:left_command :left_option :left_shift :left_control]]
+                      ; top layer
+                      [[:i :o] :right_control]
                       ; middle layer
                       [[:j :k] :escape]
-                      [[:k :l] :return_or_enter]
+                      [[:k :l] :right_command]
                       ; bottom layer
+                      [[:m :comma] :return_or_enter]
                       [[:comma :period] :right_option]
-                      ; hyper key for global app switching
-                      [[:i :o] :right_control]
                       ; seems to be issue with holding down key to act as modifier in current mac
                       ; [:f [] nil {:alone :f :held :left_command}]
                       ]
@@ -115,7 +116,9 @@
              {:des   "number persistent layer"
               :rules [:number-layer
                       ; next layer is back to base layer
+                      ;[[:comma :m] [["symbol-layer" 0] ["number-layer" 0]]]
                       [:f20 [["symbol-layer" 0] ["number-layer" 0]]]
+                      ;[[:comma :m] [["symbol-layer" 0] ["number-layer" 1]]]
                       [:q :equal_sign]
                       [:a :1]
                       [:s :2]
