@@ -37,13 +37,13 @@
                       ; w+e, e+f, e+s
                       [[:w :e] :left_control]
                       ; this is a very common key pair so it will cause alot of rollover issues
-                      ;[[:e :r] [:left_option :left_shift :left_control]]
+                      [[:e :r] [:left_option :left_shift :left_control]]
                       ; middle layer
                       [[:d :f] :tab]
-                      [[:s :d] :delete_or_backspace]
+                      [[:s :d] :right_shift]
                       ; s+f
                       ; bottom layer
-                      [[:x :c] :right_shift]
+                      [[:x :c] :delete_or_backspace]
                       [[:c :v] :left_command]
                       ; meh key for per app shortcuts
                       [[:w :e] :right_control]
@@ -55,6 +55,8 @@
                       [:9 [:left_command :left_option :left_shift :left_control]]
                       ; top layer
                       [[:i :o] :right_control]
+                      [[:u :i] [:left_command :left_option :left_shift :left_control
+                                ]]
                       ; middle layer
                       [[:j :k] :escape]
                       [[:k :l] :return_or_enter]
