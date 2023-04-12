@@ -35,16 +35,15 @@
                       [:2 [:left_option :left_shift :left_control]]
                       ; top layer
                       ; w+e, e+f, e+s
-                      [[:w :e] :left_control]
-                      ; this is a very common key pair so it will cause alot of rollover issues
-                      [[:e :r] [:left_option :left_shift :left_control]]
+                      [[:w :e] [:left_option :left_shift :left_control]]
+                      [[:e :r] :left_command]
                       ; middle layer
                       [[:d :f] :tab]
-                      [[:s :d] :right_shift]
+                      [[:s :d] :delete_or_backspace]
                       ; s+f
                       ; bottom layer
-                      [[:x :c] :delete_or_backspace]
-                      [[:c :v] :left_command]
+                      [[:x :c] :left_shift]
+                      [[:c :v] :left_control]
                       ; meh key for per app shortcuts
                       [[:w :e] :right_control]
 
@@ -54,14 +53,13 @@
                       ; hyper key for app switching
                       [:9 [:left_command :left_option :left_shift :left_control]]
                       ; top layer
-                      [[:i :o] :right_control]
-                      [[:u :i] [:left_command :left_option :left_shift :left_control
-                                ]]
+                      [[:u :i] :right_command]
+                      [[:i :o] [:left_command :left_option :left_shift :left_control]]
                       ; middle layer
                       [[:j :k] :escape]
                       [[:k :l] :return_or_enter]
                       ; bottom layer
-                      [[:m :comma] :right_command]
+                      [[:m :comma] :right_control]
                       [[:comma :period] :right_option]
                       ; seems to be issue with holding down key to act as modifier in current mac
                       ; [:f [] nil {:alone :f :held :left_command}]
