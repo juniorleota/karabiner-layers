@@ -37,15 +37,17 @@
                       [:2 [:left_option :left_shift :left_control]]
                       ; top layer
                       ; w+e, e+f, e+s
-                      [[:w :e] [:left_option :left_shift :left_control]]
-                      [[:e :r] :left_command]
+                      ; the 2 key pairs are too common to be used
+                      ;[[:w :e] [:left_option :left_shift :left_control]]
+                      ;[[:e :r] :left_command]
                       ; middle layer
                       [[:d :f] :tab]
                       [[:s :d] :delete_or_backspace]
+                      [[:s :d :f] [:left_option :left_shift :left_control]]
                       ; s+f
                       ; bottom layer
                       [[:x :c] :left_shift]
-                      [[:c :v] :left_control]
+                      [[:c :v] [:left_option :left_shift :left_control]]
 
                       ; right combo setup
                       ; num layer due to lack of keys and lack of home row mod
