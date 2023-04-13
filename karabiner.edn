@@ -21,6 +21,8 @@
                        :held    300}}
  :simlayers {
              :navigation-mode {:key :delete_or_backspace}
+             ;:symbol-sim1 {:key :j}
+             ;:symbol-sim2 {:key :f}
              :number-layer {:key :spacebar}
              }
 
@@ -44,8 +46,6 @@
                       ; bottom layer
                       [[:x :c] :left_shift]
                       [[:c :v] :left_control]
-                      ; meh key for per app shortcuts
-                      [[:w :e] :right_control]
 
                       ; right combo setup
                       ; num layer due to lack of keys and lack of home row mod
@@ -71,20 +71,20 @@
                       ; f20 mapped to right command
                       ; if base layer activated then go to symbol layer
                       [:f20 [["symbol-layer" 1] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 0]]]
-                      [[:comma :m] [["symbol-layer" 1] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 0]]]
                       ; shouldn't happen but if both symbol layer and number layer are activated then go to base layer
                       [:f20 [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 1] ["number-layer" 1]]]
                       ; one shot layers - still need todo in the future, for now it will just be used for reseting to base layer
                       [:f19 [["symbol-layer" 0] ["number-layer" 0]]]
                       ; reset to base layer mechanisms
                       [:escape [:escape ["symbol-layer" 0] ["number-layer" 0]]]
-                      ]}
+                      ]
+              }
              {:des   "symbol one shot layer"
               :rules [
+                      ;(or symbol-layer symbol-layer)
                       :symbol-layer
                       ; next layer is number layer
                       [:f20 [["symbol-layer" 0] ["number-layer" 1]]]
-                      [[:comma :m] [["symbol-layer" 0] ["number-layer" 1]]]
                       ; upper layer left
                       [:e [:equal_sign ["symbol-layer" 0] ["number-layer" 0]]]
                       [:r [:!Sequal_sign ["symbol-layer" 0] ["number-layer" 0]]]
@@ -94,7 +94,7 @@
                       [:i [:!Shyphen ["symbol-layer" 0] ["number-layer" 0]]]
                       [:o [:!Sbackslash ["symbol-layer" 0] ["number-layer" 0]]]
                       [:p [:backslash ["symbol-layer" 0] ["number-layer" 0]]]
-                      ;[:backslash [:!Sbackslash ["symbol-layer" 0] ["number-layer" 0]]]
+                      [:backslash [:!Sbackslash ["symbol-layer" 0] ["number-layer" 0]]]
                       ; middle layer left
                       [:a [:!S1 ["symbol-layer" 0] ["number-layer" 0]]]
                       [:s [:!S2 ["symbol-layer" 0] ["number-layer" 0]]]
@@ -116,8 +116,7 @@
                       [:m [:!Sopen_bracket ["symbol-layer" 0] ["number-layer" 0]]]
                       [:comma [:!Sclose_bracket ["symbol-layer" 0] ["number-layer" 0]]]
                       [:period [:open_bracket ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:slash [:close_bracket ["symbol-layer" 0] ["number-layer" 0]]]
-                      ]}
+                      [:slash [:close_bracket ["symbol-layer" 0] ["number-layer" 0]]]]}
              {:des   "number persistent layer"
               :rules [:number-layer
                       ; next layer is back to base layer
@@ -135,7 +134,8 @@
                       [:k :8]
                       [:l :9]
                       [:semicolon :0]
-                      ]}
+                      ]
+              }
              {:des   "navigation mode for global vim commands"
               :rules [:navigation-mode
                       ; next layer is back to base layer

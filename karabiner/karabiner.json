@@ -615,24 +615,6 @@
           "type" : "basic"
         }, {
           "from" : {
-            "simultaneous" : [ {
-              "key_code" : "w"
-            }, {
-              "key_code" : "e"
-            } ],
-            "simultaneous_options" : {
-              "detect_key_down_uninterruptedly" : false,
-              "key_down_order" : "insensitive",
-              "key_up_order" : "insensitive",
-              "key_up_when" : "any"
-            }
-          },
-          "to" : [ {
-            "key_code" : "right_control"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
             "key_code" : "8"
           },
           "to" : [ {
@@ -797,41 +779,6 @@
           "type" : "basic"
         }, {
           "from" : {
-            "simultaneous" : [ {
-              "key_code" : "comma"
-            }, {
-              "key_code" : "m"
-            } ],
-            "simultaneous_options" : {
-              "detect_key_down_uninterruptedly" : false,
-              "key_down_order" : "insensitive",
-              "key_up_order" : "insensitive",
-              "key_up_when" : "any"
-            }
-          },
-          "to" : [ {
-            "set_variable" : {
-              "name" : "symbol-layer",
-              "value" : 1
-            }
-          }, {
-            "set_variable" : {
-              "name" : "number-layer",
-              "value" : 0
-            }
-          } ],
-          "conditions" : [ {
-            "name" : "symbol-layer",
-            "value" : 0,
-            "type" : "variable_if"
-          }, {
-            "name" : "number-layer",
-            "value" : 0,
-            "type" : "variable_if"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
             "key_code" : "f20"
           },
           "to" : [ {
@@ -895,37 +842,6 @@
         "manipulators" : [ {
           "from" : {
             "key_code" : "f20"
-          },
-          "to" : [ {
-            "set_variable" : {
-              "name" : "symbol-layer",
-              "value" : 0
-            }
-          }, {
-            "set_variable" : {
-              "name" : "number-layer",
-              "value" : 1
-            }
-          } ],
-          "conditions" : [ {
-            "name" : "symbol-layer",
-            "value" : 1,
-            "type" : "variable_if"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "simultaneous" : [ {
-              "key_code" : "comma"
-            }, {
-              "key_code" : "m"
-            } ],
-            "simultaneous_options" : {
-              "detect_key_down_uninterruptedly" : false,
-              "key_down_order" : "insensitive",
-              "key_up_order" : "insensitive",
-              "key_up_when" : "any"
-            }
           },
           "to" : [ {
             "set_variable" : {
@@ -1092,6 +1008,30 @@
           },
           "to" : [ {
             "key_code" : "backslash"
+          }, {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 0
+            }
+          } ],
+          "conditions" : [ {
+            "name" : "symbol-layer",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "backslash"
+          },
+          "to" : [ {
+            "key_code" : "backslash",
+            "modifiers" : [ "left_shift" ]
           }, {
             "set_variable" : {
               "name" : "symbol-layer",
