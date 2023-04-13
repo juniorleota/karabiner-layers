@@ -116,7 +116,8 @@
                       [:m [:!Sopen_bracket ["symbol-layer" 0] ["number-layer" 0]]]
                       [:comma [:!Sclose_bracket ["symbol-layer" 0] ["number-layer" 0]]]
                       [:period [:open_bracket ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:slash [:close_bracket ["symbol-layer" 0] ["number-layer" 0]]]]}
+                      [:slash [:close_bracket ["symbol-layer" 0] ["number-layer" 0]]]]
+              }
              {:des   "number persistent layer"
               :rules [:number-layer
                       ; next layer is back to base layer
