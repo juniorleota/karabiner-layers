@@ -1,10 +1,13 @@
 {
+ :devices   {
+             :mareboard [{:vendor_id 1452 :product_id 591}]
+             }
  :profiles  {:Default {;; "default true means" rules default goes into this rule if no profiles specified
                        :default true
                        ;; simultaneous key press threshold
                        ;; simlayer is implemented with to_if_alone and simultaneous key press feature
                        ;; this is set super low to avoid conflict of modifier keys and during typing common keys such as er
-                       :sim     25
+                       :sim     30
                        ;; to_delayed_action_delay_milliseconds
                        ;; checkout karabiner's documentation
                        ;; https://pqrs.org/osx/karabiner/json.html
@@ -21,9 +24,7 @@
                        :held    300}}
  :simlayers {
              :navigation-mode {:key :delete_or_backspace}
-             ;:symbol-sim1 {:key :j}
-             ;:symbol-sim2 {:key :f}
-             :number-layer {:key :spacebar}
+             :number-layer    {:key :spacebar}
              }
 
  :main      [
@@ -126,7 +127,6 @@
                       ;[[:comma :m] [["symbol-layer" 0] ["number-layer" 0]]]
                       [:f20 [["symbol-layer" 0] ["number-layer" 0]]]
                       ;[[:comma :m] [["symbol-layer" 0] ["number-layer" 1]]]
-                      [:q :equal_sign]
                       [:a :1]
                       [:s :2]
                       [:d :3]
@@ -137,6 +137,16 @@
                       [:k :8]
                       [:l :9]
                       [:semicolon :0]
+                      [:q :f1]
+                      [:w :f2]
+                      [:e :f3]
+                      [:r :f4]
+                      [:t :f5]
+                      [:y :f6]
+                      [:u :f7]
+                      [:i :f8]
+                      [:o :f9]
+                      [:p :f10]
                       ]
               }
              {:des   "navigation mode for global vim commands"
