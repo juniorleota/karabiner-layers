@@ -554,6 +554,24 @@
         }, {
           "from" : {
             "simultaneous" : [ {
+              "key_code" : "a"
+            }, {
+              "key_code" : "s"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
+          },
+          "to" : [ {
+            "key_code" : "delete_forward"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "simultaneous" : [ {
               "key_code" : "s"
             }, {
               "key_code" : "d"
@@ -1520,7 +1538,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -1573,7 +1591,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -1618,7 +1636,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -1663,7 +1681,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -1708,7 +1726,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -1753,7 +1771,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -1798,7 +1816,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -1843,7 +1861,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -1888,7 +1906,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -1933,7 +1951,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -1978,7 +1996,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2023,7 +2041,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2068,7 +2086,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2113,7 +2131,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2158,7 +2176,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2203,7 +2221,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2248,7 +2266,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2293,7 +2311,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2338,7 +2356,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2383,7 +2401,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2428,7 +2446,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2484,7 +2502,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2537,7 +2555,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2582,7 +2600,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2627,7 +2645,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2672,7 +2690,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2717,7 +2735,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2762,7 +2780,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2807,7 +2825,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2852,7 +2870,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2899,7 +2917,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {
@@ -2948,7 +2966,7 @@
         }, {
           "type" : "basic",
           "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
+            "basic.simultaneous_threshold_milliseconds" : 700
           },
           "to" : [ {
             "set_variable" : {

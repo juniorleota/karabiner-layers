@@ -27,7 +27,8 @@
              :navigation-mode {:key :delete_or_backspace}
              :number-layer    {:key :spacebar}
              }
-
+; this is to set the amount of time to wait for simulatenous key press before reversing back to simlayer key keypresses
+ :simlayer-threshold 700
  :main      [
              {
               :des   "global rules"
@@ -44,6 +45,7 @@
                       ; middle layer
                       [[:d :f] :tab]
                       [[:s :d] :delete_or_backspace]
+                      [[:a :s] :delete_forward]
                       [[:s :d :f] [:left_option :left_shift :left_control]]
                       ; s+f
                       ; bottom layer
