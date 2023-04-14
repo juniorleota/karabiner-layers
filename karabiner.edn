@@ -1,6 +1,7 @@
 {
  :devices   {
-             :mareboard [{:vendor_id 1452 :product_id 591}]
+             :mareboard [{:vendor_id 65261 :product_id 0}]
+             :kinesis [{:vendor_id 10730 :product_id 259}]
              }
  :profiles  {:Default {;; "default true means" rules default goes into this rule if no profiles specified
                        :default true
@@ -32,10 +33,9 @@
               :des   "global rules"
               :rules [
                       ; left combo setup
-                      ; num layer due to lack of keys and lack of home row mod
-                      [:3 :left_command]
-                      ; meh key for custom app shortcuts
-                      [:2 [:left_option :left_shift :left_control]]
+                      ; use numbers to reduce to finger press on kinesis
+                      [:3 :left_command :kinesis]
+                      [:2 [:left_option :left_shift :left_control] :kinesis]
                       ; top layer
                       ; w+e, e+f, e+s
                       ; the 2 key pairs are too common to be used
@@ -51,10 +51,9 @@
                       [[:c :v] [:left_option :left_shift :left_control]]
 
                       ; right combo setup
-                      ; num layer due to lack of keys and lack of home row mod
-                      [:8 :right_command]
-                      ; hyper key for app switching
-                      [:9 [:left_command :left_option :left_shift :left_control]]
+                      ; use numbers to reduce to finger press on kinesis
+                      [:8 :right_command :kinesis]
+                      [:9 [:left_command :left_option :left_shift :left_control] :kinesis]
                       ; top layer
                       [[:u :i] :right_command]
                       [[:i :o] [:left_command :left_option :left_shift :left_control]]
