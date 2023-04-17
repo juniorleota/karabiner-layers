@@ -1,182 +1,183 @@
 {
- :devices   {
-             :mareboard [{:vendor_id 65261 :product_id 0}]
-             :kinesis [{:vendor_id 10730 :product_id 259}]
-             }
- :profiles  {:Default {;; "default true means" rules default goes into this rule if no profiles specified
-                       :default true
-                       ;; simultaneous key press threshold
-                       ;; simlayer is implemented with to_if_alone and simultaneous key press feature
-                       ;; this is set super low to avoid conflict of modifier keys and during typing common keys such as er
-                       :sim     30
-                       ;; to_delayed_action_delay_milliseconds
-                       ;; checkout karabiner's documentation
-                       ;; https://pqrs.org/osx/karabiner/json.html
-                       ;; basically it means time after which the key press is count delayed
-                       :delay   500
-                       ;; https://pqrs.org/osx/karabiner/json.html#to-if-alone
-                       ;; to_if_alone_timeout_milliseconds
-                       ;; affects to_if_alone behavior
-                       ;; simlayer is implemented with to_if_alone and simultaneous key press feature
-                       :alone   500
-                       ;; to_if_held_down_threshold_milliseconds
-                       ;; check the doc, i don't know what does this mean.
-                       ;; maybe press this many milliseconds counts a "held" ?
-                       :held    300}}
- :simlayers {
-             :navigation-mode {:key :delete_or_backspace}
-             :number-layer    {:key :spacebar}
-             }
-; this is to set the amount of time to wait for simulatenous key press before reversing back to simlayer key keypresses
+ :devices            {
+                      :mareboard [{:vendor_id 65261 :product_id 0}]
+                      :kinesis   [{:vendor_id 10730 :product_id 259}]
+                      }
+ :profiles           {:Default {;; "default true means" rules default goes into this rule if no profiles specified
+                                :default true
+                                ;; simultaneous key press threshold
+                                ;; simlayer is implemented with to_if_alone and simultaneous key press feature
+                                ;; this is set super low to avoid conflict of modifier keys and during typing common keys such as er
+                                :sim     30
+                                ;; to_delayed_action_delay_milliseconds
+                                ;; checkout karabiner's documentation
+                                ;; https://pqrs.org/osx/karabiner/json.html
+                                ;; basically it means time after which the key press is count delayed
+                                :delay   500
+                                ;; https://pqrs.org/osx/karabiner/json.html#to-if-alone
+                                ;; to_if_alone_timeout_milliseconds
+                                ;; affects to_if_alone behavior
+                                ;; simlayer is implemented with to_if_alone and simultaneous key press feature
+                                :alone   500
+                                ;; to_if_held_down_threshold_milliseconds
+                                ;; check the doc, i don't know what does this mean.
+                                ;; maybe press this many milliseconds counts a "held" ?
+                                :held    300}}
+ :simlayers          {
+                      :navigation-mode {:key :delete_or_backspace}
+                      :number-layer    {:key :spacebar}
+                      }
+ ; this is to set the amount of time to wait for simulatenous key press before reversing back to simlayer key keypresses
  :simlayer-threshold 700
- :main      [
-             {
-              :des   "global rules"
-              :rules [
-                      ; left combo setup
-                      ; use numbers to reduce to finger press on kinesis
-                      [:3 :left_command :kinesis]
-                      [:2 [:left_option :left_shift :left_control] :kinesis]
-                      ; top layer
-                      ; w+e, e+f, e+s
-                      ; the 2 key pairs are too common to be used
-                      ;[[:w :e] [:left_option :left_shift :left_control]]
-                      ;[[:e :r] :left_command]
-                      ; middle layer
-                      [[:d :f] :tab]
-                      [[:s :d] :delete_or_backspace]
-                      [[:a :s] :delete_forward]
-                      [[:s :d :f] [:left_option :left_shift :left_control]]
-                      ; s+f
-                      ; bottom layer
-                      [[:x :c] :left_shift]
-                      [[:c :v] [:left_option :left_shift :left_control]]
+ :main               [
+                      {
+                       :des   "global rules"
+                       :rules [
+                               ; left combo setup
+                               ; use numbers to reduce to finger press on kinesis
+                               [:3 :left_command :kinesis]
+                               [:2 [:left_option :left_shift :left_control] :kinesis]
+                               ; top layer
+                               ; w+e, e+f, e+s
+                               ; the 2 key pairs are too common to be used
+                               ;[[:w :e] [:left_option :left_shift :left_control]]
+                               ;[[:e :r] :left_command]
+                               ; middle layer
+                               [[:d :f] :tab]
+                               [[:s :d] :delete_or_backspace]
+                               [[:a :s] :delete_forward]
+                               [[:s :d :f] [:left_option :left_shift :left_control]]
+                               ; s+f
+                               ; bottom layer
+                               [[:x :c] :left_shift]
+                               [[:c :v] [:left_option :left_shift :left_control]]
 
-                      ; right combo setup
-                      ; use numbers to reduce to finger press on kinesis
-                      [:8 :right_command :kinesis]
-                      [:9 [:left_command :left_option :left_shift :left_control] :kinesis]
-                      ; top layer
-                      [[:u :i] :right_command]
-                      [[:i :o] [:left_command :left_option :left_shift :left_control]]
-                      ; middle layer
-                      [[:j :k] :escape]
-                      [[:k :l] :return_or_enter]
-                      ; bottom layer
-                      [[:m :comma] :right_control]
-                      [[:comma :period] :right_option]
-                      ; seems to be issue with holding down key to act as modifier in current mac
-                      ; [:f [] nil {:alone :f :held :left_command}]
+                               ; right combo setup
+                               ; use numbers to reduce to finger press on kinesis
+                               [:8 :right_command :kinesis]
+                               [:9 [:left_command :left_option :left_shift :left_control] :kinesis]
+                               ; top layer
+                               [[:u :i] :right_command]
+                               [[:i :o] [:left_command :left_option :left_shift :left_control]]
+                               ; middle layer
+                               [[:j :k] :escape]
+                               [[:k :l] :return_or_enter]
+                               ; bottom layer
+                               [[:m :comma] :right_control]
+                               [[:comma :period] :right_option]
+                               ; seems to be issue with holding down key to act as modifier in current mac
+                               ; [:f [] nil {:alone :f :held :left_command}]
+                               ]
+                       }
+
+                      {:des   "Different persistent layers"
+                       :rules [
+                               ; f19 mapped to left command
+                               ; f20 mapped to right command
+                               ; if base layer activated then go to symbol layer
+                               [:f20 [["symbol-layer" 1] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 0]]]
+                               ; shouldn't happen but if both symbol layer and number layer are activated then go to base layer
+                               [:f20 [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 1] ["number-layer" 1]]]
+                               ; one shot layers - still need todo in the future, for now it will just be used for reseting to base layer
+                               [:f19 [["symbol-layer" 0] ["number-layer" 0]]]
+                               ; reset to base layer mechanisms
+                               [:escape [:escape ["symbol-layer" 0] ["number-layer" 0]]]
+                               ]
+                       }
+                      {:des   "symbol one shot layer"
+                       :rules [
+                               ;(or symbol-layer symbol-layer)
+                               :symbol-layer
+                               ; next layer is number layer
+                               [:f20 [["symbol-layer" 0] ["number-layer" 1]]]
+                               ; upper layer left
+                               [:e [:equal_sign ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:r [:!Sequal_sign ["symbol-layer" 0] ["number-layer" 0]]]
+                               ; upper layer right
+                               [:y [:!Squote ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:u [:hyphen ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:i [:!Shyphen ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:o [:!Sbackslash ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:p [:backslash ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:backslash [:!Sbackslash ["symbol-layer" 0] ["number-layer" 0]]]
+                               ; middle layer left
+                               [:a [:!S1 ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:s [:!S2 ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:d [:!S3 ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:f [:!S4 ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:g [:!S5 ["symbol-layer" 0] ["number-layer" 0]]]
+                               ; middle layer right
+                               [:n [:quote ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:h [:!S6 ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:j [:!S7 ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:k [:!S8 ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:l [:!S9 ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:semicolon [:!S0 ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:quote [:!Squote ["symbol-layer" 0] ["number-layer" 0]]]
+                               ; bottom layer left
+                               [:c [:grave_accent_and_tilde ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:v [:!Sgrave_accent_and_tilde ["symbol-layer" 0] ["number-layer" 0]]]
+                               ; bottom layer right
+                               [:m [:!Sopen_bracket ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:comma [:!Sclose_bracket ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:period [:open_bracket ["symbol-layer" 0] ["number-layer" 0]]]
+                               [:slash [:close_bracket ["symbol-layer" 0] ["number-layer" 0]]]]
+                       }
+                      {:des   "number persistent layer"
+                       :rules [:number-layer
+                               ; next layer is back to base layer
+                               ;[[:comma :m] [["symbol-layer" 0] ["number-layer" 0]]]
+                               [:f20 [["symbol-layer" 0] ["number-layer" 0]]]
+                               ;[[:comma :m] [["symbol-layer" 0] ["number-layer" 1]]]
+                               [:a :1]
+                               [:s :2]
+                               [:d :3]
+                               [:f :4]
+                               [:g :5]
+                               [:h :6]
+                               [:j :7]
+                               [:k :8]
+                               [:l :9]
+                               [:semicolon :0]
+                               [:q :f1]
+                               [:w :f2]
+                               [:e :f3]
+                               [:r :f4]
+                               [:t :f5]
+                               [:y :f6]
+                               [:u :f7]
+                               [:i :f8]
+                               [:o :f9]
+                               [:p :f10]
+                               ]
+                       }
+                      {:des   "navigation mode for global vim commands"
+                       :rules [:navigation-mode
+                               ; next layer is back to base layer
+                               [:f20 [["symbol-layer" 0] ["number-layer" 0]]]
+                               ; arrows layer
+                               [:h :left_arrow]
+                               [:j :down_arrow]
+                               [:k :up_arrow]
+                               [:l :right_arrow]
+                               ; page up or down layer
+                               [:d :page_down]
+                               [:u :page_up]
+                               [:a :home]
+                               [:f :end]
+                               ; word jumps
+                               [:w [:left_option :right_arrow]]
+                               [:b [:left_option :left_arrow]]
+                               ]
+                       }
+                      {:des   "Colemak Tarmak config"
+                       :rules [
+                               :mareboard
+                               ; this is the initial setup for tarmak version 1
+                               [:j :n]
+                               [:k :e]
+                               [:e :j]
+                               [:n :k]
+                               ]}
                       ]
-              }
-             {:des    "Colemak Tarmak config"
-              :rules [
-                      :mareboard
-                      ; this is the initial setup for tarmak version 1
-                      [:j :n]
-                      [:k :e]
-                      [:e :j]
-                      [:n :k]
-                      ]}
-             {:des   "Different persistent layers"
-              :rules [
-                      ; f19 mapped to left command
-                      ; f20 mapped to right command
-                      ; if base layer activated then go to symbol layer
-                      [:f20 [["symbol-layer" 1] ["number-layer" 0]] [["symbol-layer" 0] ["number-layer" 0]]]
-                      ; shouldn't happen but if both symbol layer and number layer are activated then go to base layer
-                      [:f20 [["symbol-layer" 0] ["number-layer" 0]] [["symbol-layer" 1] ["number-layer" 1]]]
-                      ; one shot layers - still need todo in the future, for now it will just be used for reseting to base layer
-                      [:f19 [["symbol-layer" 0] ["number-layer" 0]]]
-                      ; reset to base layer mechanisms
-                      [:escape [:escape ["symbol-layer" 0] ["number-layer" 0]]]
-                      ]
-              }
-             {:des   "symbol one shot layer"
-              :rules [
-                      ;(or symbol-layer symbol-layer)
-                      :symbol-layer
-                      ; next layer is number layer
-                      [:f20 [["symbol-layer" 0] ["number-layer" 1]]]
-                      ; upper layer left
-                      [:e [:equal_sign ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:r [:!Sequal_sign ["symbol-layer" 0] ["number-layer" 0]]]
-                      ; upper layer right
-                      [:y [:!Squote ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:u [:hyphen ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:i [:!Shyphen ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:o [:!Sbackslash ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:p [:backslash ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:backslash [:!Sbackslash ["symbol-layer" 0] ["number-layer" 0]]]
-                      ; middle layer left
-                      [:a [:!S1 ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:s [:!S2 ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:d [:!S3 ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:f [:!S4 ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:g [:!S5 ["symbol-layer" 0] ["number-layer" 0]]]
-                      ; middle layer right
-                      [:n [:quote ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:h [:!S6 ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:j [:!S7 ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:k [:!S8 ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:l [:!S9 ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:semicolon [:!S0 ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:quote [:!Squote ["symbol-layer" 0] ["number-layer" 0]]]
-                      ; bottom layer left
-                      [:c [:grave_accent_and_tilde ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:v [:!Sgrave_accent_and_tilde ["symbol-layer" 0] ["number-layer" 0]]]
-                      ; bottom layer right
-                      [:m [:!Sopen_bracket ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:comma [:!Sclose_bracket ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:period [:open_bracket ["symbol-layer" 0] ["number-layer" 0]]]
-                      [:slash [:close_bracket ["symbol-layer" 0] ["number-layer" 0]]]]
-              }
-             {:des   "number persistent layer"
-              :rules [:number-layer
-                      ; next layer is back to base layer
-                      ;[[:comma :m] [["symbol-layer" 0] ["number-layer" 0]]]
-                      [:f20 [["symbol-layer" 0] ["number-layer" 0]]]
-                      ;[[:comma :m] [["symbol-layer" 0] ["number-layer" 1]]]
-                      [:a :1]
-                      [:s :2]
-                      [:d :3]
-                      [:f :4]
-                      [:g :5]
-                      [:h :6]
-                      [:j :7]
-                      [:k :8]
-                      [:l :9]
-                      [:semicolon :0]
-                      [:q :f1]
-                      [:w :f2]
-                      [:e :f3]
-                      [:r :f4]
-                      [:t :f5]
-                      [:y :f6]
-                      [:u :f7]
-                      [:i :f8]
-                      [:o :f9]
-                      [:p :f10]
-                      ]
-              }
-             {:des   "navigation mode for global vim commands"
-              :rules [:navigation-mode
-                      ; next layer is back to base layer
-                      [:f20 [["symbol-layer" 0] ["number-layer" 0]]]
-                      ; arrows layer
-                      [:h :left_arrow]
-                      [:j :down_arrow]
-                      [:k :up_arrow]
-                      [:l :right_arrow]
-                      ; page up or down layer
-                      [:d :page_down]
-                      [:u :page_up]
-                      [:a :home]
-                      [:f :end]
-                      ; word jumps
-                      [:w [:left_option :right_arrow]]
-                      [:b [:left_option :left_arrow]]
-                      ]
-              }
-             ]
  }
