@@ -69,6 +69,15 @@
                       ; [:f [] nil {:alone :f :held :left_command}]
                       ]
               }
+             {:des    "Colemak Tarmak config"
+              :rules [
+                      :mareboard
+                      ; this is the initial setup for tarmak version 1
+                      [:j :n]
+                      [:k :e]
+                      [:e :j]
+                      [:n :k]
+                      ]}
              {:des   "Different persistent layers"
               :rules [
                       ; f19 mapped to left command

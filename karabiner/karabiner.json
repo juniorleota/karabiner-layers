@@ -785,6 +785,69 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "Colemak Tarmak config",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "j"
+          },
+          "to" : [ {
+            "key_code" : "n"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 65261,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "k"
+          },
+          "to" : [ {
+            "key_code" : "e"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 65261,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "e"
+          },
+          "to" : [ {
+            "key_code" : "j"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 65261,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "n"
+          },
+          "to" : [ {
+            "key_code" : "k"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 65261,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "Different persistent layers",
         "manipulators" : [ {
           "from" : {
