@@ -34,14 +34,12 @@
                        :des   "global rules"
                        :rules [
                                ; left combo setup
-                               ; use numbers to reduce to finger press on kinesis
-                               [:3 :left_command :kinesis]
-                               [:2 [:left_option :left_shift :left_control] :kinesis]
+
                                ; top layer
                                ; w+e, e+f, e+s
-                               ; the 2 key pairs are too common to be used
-                               ;[[:w :e] [:left_option :left_shift :left_control]]
-                               ;[[:e :r] :left_command]
+                               ; the 2 key pairs are too common to be used with qwerty but possible with colemak
+                               [[:w :e] [:left_option :left_shift :left_control]]
+                               [[:e :r] :left_command]
                                ; middle layer
                                [[:d :f] :tab]
                                [[:s :d] :delete_or_backspace]
@@ -53,9 +51,6 @@
                                [[:c :v] [:left_option :left_shift :left_control]]
 
                                ; right combo setup
-                               ; use numbers to reduce to finger press on kinesis
-                               [:8 :right_command :kinesis]
-                               [:9 [:left_command :left_option :left_shift :left_control] :kinesis]
                                ; top layer
                                [[:u :i] :right_command]
                                [[:i :o] [:left_command :left_option :left_shift :left_control]]
@@ -70,6 +65,18 @@
                                ]
                        }
 
+                      {:des   "Kinesis Config"
+                       :rules [
+                               :kinesis
+                               ; use numbers to reduce to finger press on kinesis
+                               [:3 :left_command]
+                               [:2 [:left_option :left_shift :left_control]]
+                               ; use numbers to reduce to finger press on kinesis
+                               [:8 :right_command :kinesis]
+                               [:9 [:left_command :left_option :left_shift :left_control]]
+                               ;[:up_arrow :f20]
+                               ;[:right_arrow :f19]
+                                ]}
                       {:des   "Different persistent layers"
                        :rules [
                                ; f19 mapped to left command
@@ -173,6 +180,7 @@
                       {:des   "Colemak Tarmak config"
                        :rules [
                                :mareboard
+                               ;:kinesis
                                ; this is the initial setup for tarmak version 1
                                [:j :n]
                                [:k :e]
