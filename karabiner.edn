@@ -183,6 +183,11 @@
                                [:k :e]
                                [:e :j]
                                [:n :k]
+                               ; seem to have issues when holding down the shift keys
+                               [:!Sj :!Sn]
+                               [:!Sk :!Se]
+                               [:!Se :!Sj]
+                               [:!Sn :!Sk]
                                ]}
                       ]
  }
