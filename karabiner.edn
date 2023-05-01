@@ -37,7 +37,7 @@
                                ; top layer
                                ; w+e, e+f, e+s
                                ; the 2 key pairs are too common to be used with qwerty but possible with colemak
-                               [[:w :e] [:left_option :left_shift :left_control]]
+                               [[:w :e] [:left_command :left_option :left_shift :left_control]]
                                [[:e :r] :left_command]
                                ; middle layer
                                [[:d :f] :tab]
@@ -165,15 +165,32 @@
                                [:k :up_arrow]
                                [:l :right_arrow]
                                ; page up or down layer
-                               [:d :page_down]
-                               [:u :page_up]
-                               [:a :home]
-                               [:f :end]
+                               [:m :page_down]
+                               [:comma :page_up]
+                               [:n :home]
+                               [:period :end]
                                ; word jumps
-                               [:w [:left_option :right_arrow]]
-                               [:b [:left_option :left_arrow]]
+                               [:u [:left_option :down_arrow]]
+                               [:i [:left_option :up_arrow]]
+                               [:y [:left_option :left_arrow]]
+                               [:o [:left_option :right_arrow]]
                                ]
                        }
+                       {:des   "Colemak Tarmak config"
+                        :rules [
+                                :kinesis
+                                ;:kinesis
+                                ; this is the initial setup for tarmak version 1
+                                [:j :n]
+                                [:k :e]
+                                [:e :j]
+                                [:n :k]
+                                ; seem to have issues when holding down the shift keys
+                                [:!Sj :!Sn]
+                                [:!Sk :!Se]
+                                [:!Se :!Sj]
+                                [:!Sn :!Sk]
+                                ]}
                       {:des   "Colemak Tarmak config"
                        :rules [
                                :mareboard
