@@ -1,6 +1,7 @@
 {
  :devices            {
                       :mareboard [{:vendor_id 65261 :product_id 0}]
+                      :mareboard2 [{:vendor_id 7504 :product_id 24926}]
                       :kinesis   [{:vendor_id 10730 :product_id 259}]
                       }
  :profiles           {:Default {;; "default true means" rules default goes into this rule if no profiles specified
@@ -178,7 +179,7 @@
                        }
                        {:des   "Colemak Tarmak config"
                         :rules [
-                                :kinesis
+                                :mareboard2
                                 ;:kinesis
                                 ; this is the initial setup for tarmak version 1
                                 [:j :n]
